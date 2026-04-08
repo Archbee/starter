@@ -1,0 +1,63 @@
+---
+title: Quickstart
+description: Get up and running with Archbee CLI in 5 minutes
+icon: rocket
+---
+
+## 1. Install
+
+```bash
+npm install -g @archbee/cli
+```
+
+Verify with `archbee --version`.
+
+## 2. Create a project
+
+```bash
+archbee new my-docs
+```
+
+This creates a directory with a starter template, example docs, and an `archbee.json` config file.
+
+## 3. Start the dev server
+
+```bash
+cd my-docs
+archbee dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see your docs. The dev server watches for file changes and updates instantly.
+
+## 4. Edit your docs
+
+Open `guides/index.mdx` in your editor and make a change. The browser updates automatically — no refresh needed.
+
+## 5. Add a new page
+
+Create `guides/my-page.mdx`:
+
+```mdx
+---
+title: My New Page
+description: A page I just created
+---
+
+This is a new documentation page.
+```
+
+Add it to your `structure.docsTree` in `archbee.json`:
+
+```json
+"structure": {
+  "docsTree": [
+    { "path": "my-page", "name": "My New Page" }
+  ]
+}
+```
+
+## Next steps
+
+- [Configuration](/essentials/configuration) — customize your `archbee.json`
+- [Navigation](/essentials/navigation) — organize docs with spaces and categories
+- [Templates](/customization/templates) — switch between 4 built-in templates

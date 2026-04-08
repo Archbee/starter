@@ -1,0 +1,163 @@
+---
+title: Navigation
+description: Organize your docs with spaces, categories, and links
+icon: compass
+---
+
+Navigation is defined in `archbee.json`. The main space lives at root level with `docsPath` + `structure.docsTree`. Additional spaces go in `sites[]`. This mirrors the API's `git-config-schema.ts`.
+
+## Main Space
+
+The main space is defined at the root level of your config:
+
+```json
+"name": "Guides",
+"docsPath": "guides",
+"structure": {
+  "docsTree": [
+    { "path": "index", "name": "Introduction", "icon": "house" },
+    { "path": "quickstart", "name": "Quickstart" }
+  ]
+}
+```
+
+- `name` — site title and main space navbar label
+- `docsPath` — directory containing the docs
+- `structure.docsTree` — the navigation tree
+
+## Additional Spaces (sites)
+
+Additional spaces go in `sites[]`:
+
+```json
+"sites": [
+  {
+    "name": "Changelog",
+    "docsPath": "changelog",
+    "icon": "newspaper",
+    "structure": {
+      "docsTree": [
+        { "path": "march-2026", "name": "March 2026" }
+      ]
+    }
+  }
+]
+```
+
+Each site has its own `docsPath` and navigation tree. Sites appear in the navbar dropdown.
+
+Sites can also override any appearance or content field from the root config:
+
+```json
+"sites": [
+  {
+    "name": "API Reference",
+    "docsPath": "api",
+    "icon": "code",
+    "hostingColor": "#16A34A",
+    "template": "windy",
+    "structure": { "docsTree": [...] }
+  }
+]
+```
+
+Fields not specified on a site inherit from the root config.
+
+## Documents
+
+A document is a reference to an `.mdx` or `.md` file:
+
+```json
+{ "path": "quickstart", "name": "Quickstart", "icon": "rocket" }
+```
+
+The `path` is relative to the space's `docsPath`. So `"path": "quickstart"` in a space with `"docsPath": "guides"` resolves to `guides/quickstart.mdx`.
+
+## Categories
+
+Categories group related documents. Set `isCategory: true` and use `categoryName`:
+
+```json
+{
+  "isCategory": true,
+  "categoryName": "Getting Started",
+  "icon": "book-text",
+  "children": [
+    { "path": "installation", "name": "Installation" },
+    { "path": "quickstart", "name": "Quickstart" }
+  ]
+}
+```
+
+### Folded Categories
+
+Collapse a category by default:
+
+```json
+{
+  "isCategory": true,
+  "categoryName": "Advanced",
+  "isFoldedByDefault": true,
+  "children": [...]
+}
+```
+
+## External Links
+
+Add sidebar links to external sites:
+
+```json
+{
+  "isLink": true,
+  "linkTitle": "GitHub",
+  "linkHref": "https://github.com/archbee",
+  "linkOpensInNewTab": true,
+  "icon": "github"
+}
+```
+
+## Nested Documents
+
+A document can have children — it's both clickable and expandable:
+
+```json
+{
+  "path": "api/overview",
+  "name": "API Overview",
+  "children": [
+    { "path": "api/authentication", "name": "Authentication" },
+    { "path": "api/endpoints", "name": "Endpoints" }
+  ]
+}
+```
+
+## Hidden Items
+
+Hide a doc from the sidebar (still accessible via direct URL):
+
+```json
+{ "path": "internal-notes", "name": "Notes", "isHidden": true }
+```
+
+## Shadow Docs
+
+Shadow docs are AI-only documents — visible to AI search but hidden from the navigation tree:
+
+```json
+{ "path": "ai-context", "name": "AI Context", "isShadowDocs": true }
+```
+
+## Icons
+
+All icons use [Lucide](https://lucide.dev/icons/) names. Examples:
+
+| Icon Name | Use For |
+|-----------|---------|
+| `house` | Home page |
+| `rocket` | Getting started |
+| `book-open` | Documentation |
+| `code` | API / Development |
+| `settings` | Configuration |
+| `paintbrush` | Customization |
+| `newspaper` | Changelog / Blog |
+| `github` | GitHub links |

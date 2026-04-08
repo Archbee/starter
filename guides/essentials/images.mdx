@@ -1,0 +1,83 @@
+---
+title: Images & Assets
+description: Adding images, logos, and static files
+icon: image
+---
+
+Static files like images, logos, and favicons go in the `public/` directory at your project root.
+
+## Adding Images
+
+Place an image in `public/`:
+
+```
+my-docs/
+  public/
+    screenshot.png
+  guides/
+    index.mdx
+```
+
+Reference it in your MDX:
+
+```markdown
+![Screenshot](/public/screenshot.png)
+```
+
+## Logos
+
+Configure light and dark logos in `archbee.json`:
+
+```json
+"logos": {
+  "light": "/public/logo-light.png",
+  "dark": "/public/logo-dark.png",
+  "favicon": "/public/favicon.ico"
+}
+```
+
+The light logo appears in light mode, the dark logo in dark mode. If only one is provided, it's used for both.
+
+### Supported Formats
+
+- **Logo:** PNG, SVG, JPG, WebP (recommended: SVG or PNG with transparency)
+- **Favicon:** ICO, SVG, PNG
+
+### Recommended Sizes
+
+| Asset | Size |
+|-------|------|
+| Logo | 200px wide, any height |
+| Favicon | 32x32 or 192x192 |
+
+## File Organization
+
+Keep your `public/` directory organized:
+
+```
+public/
+  logo-light.png
+  logo-dark.png
+  favicon.ico
+  images/
+    hero.png
+    diagram.svg
+  downloads/
+    guide.pdf
+```
+
+Reference nested files with the full path:
+
+```markdown
+![Hero](/public/images/hero.png)
+```
+
+## External Images
+
+You can also use external image URLs:
+
+```markdown
+![Alt text](https://example.com/image.png)
+```
+
+External images are not served by the dev server — they require an internet connection.

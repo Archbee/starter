@@ -1,0 +1,111 @@
+---
+title: API Endpoint
+icon: plug
+---
+
+API endpoint blocks render interactive API documentation with parameters, examples, and response codes.
+
+<ApiMethodV2>
+```json
+{
+  "name": "Get User",
+  "method": "GET",
+  "url": "https://api.example.com/users/{id}",
+  "description": "Retrieve a user by their unique ID.",
+  "tab": "examples",
+  "examples": {
+    "languages": [
+      {
+        "id": "js-example",
+        "language": "javascript",
+        "code": "const res = await fetch('https://api.example.com/users/usr_abc123', {\n  headers: { 'Authorization': 'Bearer sk_live_xxx' }\n})\nconst user = await res.json()",
+        "customLabel": ""
+      },
+      {
+        "id": "curl-example",
+        "language": "bash",
+        "code": "curl https://api.example.com/users/usr_abc123 \\\n  -H 'Authorization: Bearer sk_live_xxx'",
+        "customLabel": ""
+      }
+    ],
+    "selectedLanguageId": "js-example"
+  },
+  "results": {
+    "languages": [
+      {
+        "id": "res-200",
+        "language": "200",
+        "code": "{\n  \"id\": \"usr_abc123\",\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\",\n  \"role\": \"admin\"\n}",
+        "customLabel": ""
+      },
+      {
+        "id": "res-404",
+        "language": "404",
+        "code": "{\n  \"error\": \"Not found\",\n  \"message\": \"User does not exist\"\n}",
+        "customLabel": ""
+      }
+    ],
+    "selectedLanguageId": "res-200"
+  },
+  "request": {
+    "pathParameters": [
+      {
+        "name": "id",
+        "kind": "required",
+        "type": "string",
+        "description": "User ID (e.g. usr_abc123)"
+      }
+    ],
+    "queryParameters": [
+      {
+        "name": "include",
+        "kind": "optional",
+        "type": "string",
+        "description": "Comma-separated relations to include"
+      }
+    ],
+    "headerParameters": [
+      {
+        "name": "Authorization",
+        "kind": "required",
+        "type": "string",
+        "description": "Bearer token"
+      }
+    ],
+    "bodyDataParameters": [],
+    "formDataParameters": []
+  },
+  "currentNewParameter": {
+    "label": "Path Parameter",
+    "value": "pathParameters"
+  },
+  "hasTryItOut": false
+}
+```
+</ApiMethodV2>
+
+## Syntax
+
+<CodeblockTabs>
+
+MDX
+
+```html
+<ApiMethodV2>
+(JSON configuration with name, method, url, request, examples, results)
+</ApiMethodV2>
+```
+
+Markdown
+
+```markdown
+:::::ApiMethodV2
+(JSON configuration with name, method, url, request, examples, results)
+:::::
+```
+
+</CodeblockTabs>
+
+The JSON supports: `pathParameters`, `queryParameters`, `headerParameters`, `bodyDataParameters`, `formDataParameters`, plus code examples and response samples in multiple languages.
+
+API endpoint blocks appear in the right column when using two-column layout.

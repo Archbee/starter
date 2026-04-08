@@ -1,0 +1,87 @@
+---
+title: Theming
+description: Customize colors, fonts, and display mode
+icon: palette
+---
+
+## Colors
+
+Set your brand colors in `archbee.json`:
+
+```json
+"hostingColor": "#2166AE",
+"darkHostingColor": "#2166AE",
+"secondaryColor": "#e0eefc",
+"darkSecondaryColor": "#14467a"
+```
+
+Secondary colors are derived automatically from the accent color if not specified.
+
+| Field | Description |
+|-------|-------------|
+| `hostingColor` | Primary accent color in light mode (links, active states, buttons) |
+| `secondaryColor` | Contrast/secondary color for light mode — derived if omitted |
+| `darkHostingColor` | Primary accent color in dark mode |
+| `darkSecondaryColor` | Contrast/secondary color for dark mode — derived if omitted |
+
+## Display Mode
+
+Set the default theme:
+
+```json
+"publicTheme": "light"
+```
+
+Options: `"light"` or `"dark"`. Users can toggle with the theme switcher (if `showThemeSwitcher` is enabled).
+
+## Layout
+
+Choose between one-column and two-column layout:
+
+```json
+"contentLayout": "two-column"
+```
+
+- `two-column` — sidebar + content area (default, best for most docs)
+- `one-column` — full-width content (best for long-form articles)
+
+## Custom Fonts
+
+Use any Google Font by name:
+
+```json
+"customFont": "Inter"
+```
+
+The CLI resolves the font URL automatically. Popular choices:
+
+| Font | Style |
+|------|-------|
+| `Inter` | Clean, modern sans-serif |
+| `Roboto` | Google's signature font |
+| `Poppins` | Geometric, friendly |
+| `Source Sans Pro` | Adobe's open source |
+| `JetBrains Mono` | Monospace for technical docs |
+| `Merriweather` | Serif for long-form reading |
+| `Plus Jakarta Sans` | Modern geometric |
+| `Nunito` | Rounded, approachable |
+
+Any [Google Fonts](https://fonts.google.com/) family name works.
+
+## Per-Site Overrides
+
+All theming fields can be overridden per space in `sites[]`. For example, give your API Reference a different color:
+
+```json
+"sites": [{
+  "name": "API Reference",
+  "docsPath": "api",
+  "hostingColor": "#16A34A",
+  "darkHostingColor": "#4ADE80",
+  "publicTheme": "dark",
+  "customFont": "JetBrains Mono",
+  "structure": { "docsTree": [...] }
+}]
+```
+
+Fields not specified inherit from root config.

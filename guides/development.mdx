@@ -1,0 +1,77 @@
+---
+title: Development
+description: Local development workflow and CLI tools
+icon: code
+---
+
+## Dev server
+
+Start the local preview server:
+
+```bash
+archbee dev
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--port` | `3000` | Port number |
+| `--no-open` | — | Don't open browser automatically |
+| `--cwd` | `.` | Working directory |
+
+## Hot reload
+
+The dev server watches your project and updates the browser instantly when you:
+
+- Edit any `.mdx` or `.md` file
+- Modify `archbee.json`
+- Add, rename, or delete docs
+- Change files in `/public/`
+
+Updates happen in under 100ms — no manual refresh needed.
+
+## Project structure
+
+```
+my-docs/
+  archbee.json          Configuration
+  guides/               Main docs space
+    index.mdx           Home page
+    essentials/          Category folder
+      configuration.mdx
+  blocks/               Blocks showcase space
+    callouts-buttons.mdx
+  public/               Static assets
+    logo-light.png
+    favicon.ico
+```
+
+## Validation
+
+Check your config and docs for errors:
+
+```bash
+archbee validate
+```
+
+Verifies that `archbee.json` is valid and all referenced doc files exist. Returns exit code 1 on errors — use it in CI pipelines.
+
+## Link checking
+
+Scan your docs for broken internal links:
+
+```bash
+archbee broken-links
+```
+
+## Config formats
+
+Archbee CLI auto-detects your config format:
+
+| Format | File | Use case |
+|--------|------|----------|
+| Archbee | `archbee.json` | Native format, full feature support |
+| Docusaurus | `docusaurus.config.js` / `.ts` | Migrating from Docusaurus |
+
+Run `archbee dev` in any project with one of these files - no conversion needed.
+
+See [Configuration](/essentials/configuration) for the full `archbee.json` reference.

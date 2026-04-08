@@ -1,0 +1,62 @@
+---
+title: Tabs
+icon: layers
+---
+
+Tabs organize content into switchable panels. Use them to show the same concept in multiple languages or frameworks.
+
+<Tabs>
+<Tab title="JavaScript">
+
+```javascript
+const greeting = 'Hello, world!'
+console.log(greeting)
+```
+
+</Tab>
+<Tab title="Python">
+
+```python
+greeting = "Hello, world!"
+print(greeting)
+```
+
+</Tab>
+<Tab title="Go">
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, world!")
+}
+```
+
+</Tab>
+</Tabs>
+
+## Syntax
+
+<CodeblockTabs>
+
+MDX
+
+```html
+<Tabs>
+  <Tab title="Tab Name">Content here.</Tab>
+</Tabs>
+```
+
+Markdown
+
+```markdown
+:::::Tabs
+::::Tab{title="Tab Name"}
+Content here.
+::::
+:::::
+```
+
+</CodeblockTabs>

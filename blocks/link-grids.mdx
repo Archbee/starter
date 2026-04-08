@@ -1,0 +1,112 @@
+---
+title: Link Grid
+icon: layout-grid
+---
+
+Link grids display content in responsive card layouts. Cards can have plain, colored, or image headers.
+
+## Plain Cards
+
+<LinkArray contentSource="CUSTOM" itemsPerRow="3">
+<LinkArrayItem>
+
+**Getting Started**
+
+Learn the basics of setting up your documentation project.
+
+</LinkArrayItem>
+<LinkArrayItem>
+
+**Configuration**
+
+Customize every aspect of your docs with `archbee.json`.
+
+</LinkArrayItem>
+<LinkArrayItem>
+
+**Templates**
+
+Choose from 4 built-in templates to match your brand.
+
+</LinkArrayItem>
+</LinkArray>
+
+## Colored Header Cards
+
+<LinkArray contentSource="CUSTOM" itemsPerRow="3">
+<LinkArrayItem headerType="COLOR" headerColor="#2166AE">
+
+**API Reference**
+
+Complete endpoint documentation with examples.
+
+</LinkArrayItem>
+<LinkArrayItem headerType="COLOR" headerColor="#16A34A">
+
+**Guides**
+
+Step-by-step tutorials for common tasks.
+
+</LinkArrayItem>
+<LinkArrayItem headerType="COLOR" headerColor="#DC2626">
+
+**Troubleshooting**
+
+Solutions to common issues and FAQ.
+
+</LinkArrayItem>
+</LinkArray>
+
+## Image Header Cards
+
+<LinkArray contentSource="CUSTOM" itemsPerRow="3">
+<LinkArrayItem headerType="IMAGE" headerImage="https://images.archbee.com/K_JWZranXy1tD6qvlG2v6-YOw4gia62kkE1bvECH6iX-20250910-182430.png?format=webp">
+
+**Visual Docs**
+
+Add images and media to your documentation.
+
+</LinkArrayItem>
+<LinkArrayItem headerType="IMAGE" headerImage="https://images.archbee.com/K_JWZranXy1tD6qvlG2v6-_tiGuKOk_9dziwY-l92FX-20250910-190316.png?format=webp">
+
+**Code Examples**
+
+Syntax-highlighted code with copy support.
+
+</LinkArrayItem>
+<LinkArrayItem headerType="IMAGE" headerImage="https://images.archbee.com/K_JWZranXy1tD6qvlG2v6-Vjd5vTfjNgJi8V0mulhgV-20250910-190329.png?format=webp">
+
+**API Blocks**
+
+Interactive API endpoint documentation.
+
+</LinkArrayItem>
+</LinkArray>
+
+## Syntax
+
+<CodeblockTabs>
+
+MDX
+
+```html
+<LinkArray contentSource="CUSTOM" itemsPerRow="3">
+  <LinkArrayItem headerType="COLOR" headerColor="#hex">
+    Card content.
+  </LinkArrayItem>
+</LinkArray>
+```
+
+Markdown
+
+```markdown
+:::::LinkArray{contentSource="CUSTOM" itemsPerRow="3"}
+::::LinkArrayItem{headerType="COLOR" headerColor="#hex"}
+Card content.
+::::
+:::::
+```
+
+</CodeblockTabs>
+
+Header types: none (plain), `COLOR` with `headerColor`, `IMAGE` with `headerImage`.

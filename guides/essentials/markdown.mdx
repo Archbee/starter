@@ -1,0 +1,108 @@
+---
+title: Markdown
+description: Writing documentation with Markdown and MDX
+icon: file-text
+---
+
+Archbee supports standard Markdown and MDX.
+
+## Frontmatter
+
+Every doc can have YAML frontmatter at the top:
+
+```mdx
+---
+title: My Page Title
+description: A brief description
+icon: rocket
+---
+```
+
+| Field | Description |
+|-------|-------------|
+| `title` | Page title (used in browser tab and navigation) |
+| `description` | Page description (used in meta tags) |
+| `icon` | Lucide icon name for navigation |
+
+## Text Formatting
+
+```markdown
+**Bold text**
+*Italic text*
+~~Strikethrough~~
+`inline code`
+[Link text](https://example.com)
+```
+
+## Headings
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+```
+
+## Lists
+
+```markdown
+- Unordered item
+- Another item
+  - Nested item
+
+1. Ordered item
+2. Second item
+3. Third item
+```
+
+## Tables
+
+```markdown
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+```
+
+## Blockquotes
+
+```markdown
+> This is a blockquote.
+> It can span multiple lines.
+```
+
+## Callouts
+
+Use the Archbee callout syntax for highlighted notes:
+
+```markdown
+::::hint{type="info"}
+This is an info callout.
+::::
+
+::::hint{type="warning"}
+This is a warning callout.
+::::
+
+::::hint{type="danger"}
+This is a danger callout.
+::::
+
+::::hint{type="success"}
+This is a success callout.
+::::
+```
+
+## Horizontal Rule
+
+```markdown
+---
+```
+
+## Images
+
+See [Images & Assets](/essentials/images) for how to add images.
+
+## Code Blocks
+
+See [Code Blocks](/essentials/code) for syntax highlighting and tabbed code blocks.

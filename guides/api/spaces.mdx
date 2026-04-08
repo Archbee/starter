@@ -1,0 +1,112 @@
+---
+title: Spaces
+description: Create, update, publish, and clone spaces
+icon: layout-dashboard
+---
+
+All commands require `--doc-space-id` and `--api-key`.
+
+## create-space
+
+Create a new documentation space.
+
+```bash
+archbee create-space --doc-space-id <ID> --api-key <KEY> --name "API Reference" --doc-space-group-id <GROUP_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | An existing space ID with an API key (used for authentication only) |
+| `--api-key` | Yes | API key |
+| `--name` | No | Space name |
+| `--doc-space-group-id` | No | Space group ID to add the new space to |
+| `--enable-llm` | No | Enable AI features |
+| `--enable-review-system` | No | Enable review system |
+| `--enable-branching-system` | No | Enable branching/versioning |
+
+The new space inherits the API key from the authenticated space. An initial empty document is created automatically.
+
+## update-space
+
+Update space settings including access control, hostname, and space links.
+
+### Protection types
+
+```bash
+# No protection (public)
+archbee update-space --doc-space-id <ID> --api-key <KEY> --protection-type None
+
+# Password
+archbee update-space --doc-space-id <ID> --api-key <KEY> --protection-type Password --password "secret123"
+
+# JWT authentication
+archbee update-space --doc-space-id <ID> --api-key <KEY> --protection-type JWT --jwt-validation-type JWT-Secret --jwt-secret "my-secret-key"
+
+# SAML
+archbee update-space --doc-space-id <ID> --api-key <KEY> --protection-type SAML --saml-metadata "<EntityDescriptor>...</EntityDescriptor>" --saml-entity-id "my-entity"
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--protection-type` | No | Access type (can specify multiple): `None`, `Password`, `Guest accounts`, `Private Accounts`, `Private Link`, `Magic Link`, `JWT`, `SAML` |
+| `--password` | No | Password (for Password type) |
+| `--jwt-validation-type` | No | `JWT-Secret` or `JWT-KeySet` |
+| `--jwt-secret` | No | JWT secret (for JWT-Secret) |
+| `--jwt-key-url` | No | JWKS URL (for JWT-KeySet) |
+| `--jwt-redirect-url` | No | JWT redirect URL |
+| `--saml-metadata` | No | SAML metadata XML or URL |
+| `--saml-entity-id` | No | SAML entity ID |
+| `--conditional-rule-id` | No | Display rule ID (requires JWT) |
+| `--guest-accounts` | No | JSON array: `[{"email":"...","password":"..."}]` |
+| `--private-accounts` | No | JSON array: `[{"email":"..."}]` |
+| `--magic-link-accounts` | No | JSON array: `[{"email":"..."}]` |
+| `--private-link-tokens` | No | JSON array: `[{"description":"...","env":"...","token":"..."}]` |
+
+### Hostname
+
+```bash
+archbee update-space --doc-space-id <ID> --api-key <KEY> --hostname docs.example.com --hostname-path "/"
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--hostname` | No | Custom domain (e.g., `docs.example.com`) |
+| `--hostname-path` | No | Path component for the hostname |
+
+### Space links
+
+```bash
+archbee update-space --doc-space-id <ID> --api-key <KEY> --space-links '[{"label":"Docs","docSpaceId":"<SPACE_ID>"},{"label":"API","docSpaceId":"<SPACE_ID>"}]'
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--space-links` | No | JSON array of links. Each requires `label` and `docSpaceId`. |
+
+## publish-space
+
+Publish documents to the public portal.
+
+```bash
+archbee publish-space --doc-space-id <ID> --api-key <KEY>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+
+## clone-space
+
+Create a copy of a space with all its documents.
+
+```bash
+archbee clone-space --doc-space-id <ID> --api-key <KEY>
+archbee clone-space --doc-space-id <ID> --api-key <KEY> --target-space-group-id <GROUP_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID to clone |
+| `--api-key` | Yes | API key |
+| `--target-space-group-id` | No | Space group for the cloned space |

@@ -1,0 +1,179 @@
+{
+  "name": "Archbee Documentation",
+  "icon": "globe",
+  "template": "windy",
+  "contentLayout": "two-column",
+  "publicTheme": "light",
+
+  "faviconURL": "/public/favicon.ico",
+  "publicLogoURL": "/public/logo-light.png",
+  "darkPublicLogoURL": "/public/logo-dark.png",
+
+  "hostingColor": "#2166AE",
+  "darkHostingColor": "#2166AE",
+
+  "showReadTime": true,
+  "showLastUpdate": true,
+  "showThemeSwitcher": true,
+  "showDocNavigationButtons": true,
+  "hasPrimaryColorLinks": true,
+  "isArchbeeBrandVisible": true,
+  "isPublicBackgroundEnabled": true,
+
+  "docsPath": "guides",
+  "structure": {
+    "docsTree": [
+      {
+        "isLink": true,
+        "linkTitle": "Archbee Docs",
+        "linkHref": "https://www.archbee.com/docs",
+        "linkOpensInNewTab": true
+      },
+      {
+        "isCategory": true,
+        "categoryName": "Getting Started",
+        "icon": "rocket",
+        "children": [
+          { "path": "index", "name": "Introduction", "icon": "house" },
+          { "path": "quickstart", "name": "Quickstart", "icon": "rocket" },
+          { "path": "development", "name": "Development", "icon": "code" }
+        ]
+      },
+      {
+        "isCategory": true,
+        "categoryName": "Essentials",
+        "icon": "book-text",
+        "children": [
+          { "path": "essentials/configuration", "name": "Configuration" },
+          { "path": "essentials/navigation", "name": "Navigation" },
+          { "path": "essentials/markdown", "name": "Markdown" },
+          { "path": "essentials/code", "name": "Code Blocks" },
+          { "path": "essentials/images", "name": "Images & Assets" }
+        ]
+      },
+      {
+        "isCategory": true,
+        "categoryName": "Customization",
+        "icon": "paintbrush",
+        "children": [
+          { "path": "customization/templates", "name": "Templates" },
+          { "path": "customization/theming", "name": "Theming" },
+          { "path": "customization/branding", "name": "Branding" }
+        ]
+      },
+      {
+        "isCategory": true,
+        "categoryName": "API Commands",
+        "icon": "terminal",
+        "children": [
+          { "path": "api/documents", "name": "Documents" },
+          { "path": "api/spaces", "name": "Spaces" },
+          { "path": "api/openapi-files", "name": "OpenAPI & Files" }
+        ]
+      }
+    ]
+  },
+
+  "sites": [
+    {
+      "name": "Blocks",
+      "docsPath": "blocks",
+      "icon": "box",
+      "structure": {
+        "docsTree": [
+          {
+            "isCategory": true,
+            "categoryName": "Basic",
+            "icon": "text",
+            "children": [
+              { "path": "headings", "name": "Headings", "icon": "heading" },
+              {
+                "path": "expandable-headings",
+                "name": "Expandable Headings",
+                "icon": "chevrons-down"
+              },
+              { "path": "lists", "name": "Lists", "icon": "list" },
+              { "path": "tables", "name": "Tables", "icon": "table" },
+              {
+                "path": "buttons",
+                "name": "Button",
+                "icon": "square-mouse-pointer"
+              },
+              {
+                "path": "callouts",
+                "name": "Callout",
+                "icon": "message-circle"
+              },
+              {
+                "path": "dividers",
+                "name": "Horizontal Divider",
+                "icon": "minus"
+              },
+              {
+                "path": "vertical-split",
+                "name": "Vertical Split",
+                "icon": "columns-2"
+              },
+              { "path": "blockquotes", "name": "Blockquote", "icon": "quote" },
+              {
+                "path": "link-grids",
+                "name": "Link Grid",
+                "icon": "layout-grid"
+              },
+              {
+                "path": "workflows",
+                "name": "Workflow",
+                "icon": "list-ordered"
+              },
+              { "path": "tabs", "name": "Tabs", "icon": "layers" }
+            ]
+          },
+          {
+            "isCategory": true,
+            "categoryName": "Media",
+            "icon": "image",
+            "children": [
+              { "path": "files", "name": "File", "icon": "paperclip" },
+              { "path": "images", "name": "Image", "icon": "image" },
+              { "path": "embeds", "name": "YouTube or Vimeo", "icon": "video" }
+            ]
+          },
+          {
+            "isCategory": true,
+            "categoryName": "Developer",
+            "icon": "code",
+            "children": [
+              {
+                "path": "code-blocks",
+                "name": "Code Editor",
+                "icon": "file-code"
+              },
+              { "path": "code-drawers", "name": "Code Drawer", "icon": "code" },
+              {
+                "path": "diagrams",
+                "name": "Mermaid Diagram",
+                "icon": "git-branch"
+              },
+              { "path": "math", "name": "TeX", "icon": "sigma" },
+              {
+                "path": "api-endpoints",
+                "name": "API Endpoint",
+                "icon": "plug"
+              },
+              { "path": "changelogs", "name": "Changelog", "icon": "clock" }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "externalLinks": [
+    { "label": "Book a Demo", "url": "https://archbee.com/book-demo" },
+    {
+      "label": "Sign Up ->",
+      "url": "https://app.archbee.com/signup",
+      "isPrimary": true
+    }
+  ]
+}

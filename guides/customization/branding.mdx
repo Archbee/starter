@@ -1,0 +1,108 @@
+---
+title: Branding
+description: Logos, header links, and portal options
+icon: sparkles
+---
+
+## Logos
+
+Set light and dark logos plus a favicon:
+
+```json
+"faviconURL": "/public/favicon.ico",
+"publicLogoURL": "/public/logo-light.png",
+"darkPublicLogoURL": "/public/logo-dark.png"
+```
+
+Place the files in your `public/` directory. SVG or PNG with transparency work best.
+
+## Header Links
+
+Add links to the top navbar (opposite side of the logo):
+
+```json
+"externalLinks": [
+  {
+    "label": "Book a Demo",
+    "url": "https://archbee.com/demo"
+  },
+  {
+    "label": "Sign Up",
+    "url": "https://app.archbee.com",
+    "isPrimary": true
+  }
+]
+```
+
+Links with `isPrimary: true` render as a button. Regular links render as text.
+
+## Portal Customization
+
+Fine-tune what's visible on your docs site. All fields are at root level:
+
+```json
+"showReadTime": true,
+"showLastUpdate": true,
+"showThemeSwitcher": true,
+"showDocNavigationButtons": true,
+"hasPrimaryColorLinks": true,
+"isArchbeeBrandVisible": true,
+"isPublicBackgroundEnabled": false
+```
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `showReadTime` | `true` | Show reading time on each doc |
+| `showLastUpdate` | `true` | Show last modified date |
+| `showThemeSwitcher` | `true` | Show light/dark toggle |
+| `showDocNavigationButtons` | `true` | Show prev/next buttons at bottom |
+| `hasPrimaryColorLinks` | `true` | Use accent color for links |
+| `isArchbeeBrandVisible` | `true` | Show "Powered by Archbee" |
+| `isPublicBackgroundEnabled` | `false` | Enable background pattern |
+
+## Custom Footer
+
+Add custom HTML to the page footer:
+
+```json
+"footerTemplate": "<footer><p>Copyright 2026 My Company</p></footer>"
+```
+
+## Custom 404 Page
+
+Show a custom HTML page when a document is not found:
+
+```json
+"custom404": "<div style='text-align:center;padding:60px'><h1>Page Not Found</h1><p>This page doesn't exist.</p><a href='/'>Back to Docs</a></div>"
+```
+
+If not set, a default "CONTENT NOT FOUND" page is shown.
+
+## Custom CSS & JavaScript
+
+Inject custom styles or scripts. **Must include wrapper tags** (`<style>` / `<script>`):
+
+```json
+"customCSS": "<style>.my-class { color: red; }</style>",
+"customJS": "<script>console.log('loaded')</script>",
+"headerIncludes": "<meta name='author' content='My Company'>"
+```
+
+These are injected into `<head>` and update in real time via HMR.
+
+## Per-Site Overrides
+
+Every appearance and custom content field can be overridden per space in `sites[]`. Fields not specified inherit from root:
+
+```json
+"sites": [{
+  "name": "API Reference",
+  "docsPath": "api",
+  "hostingColor": "#16A34A",
+  "template": "windy",
+  "customCSS": "<style>h1 { color: green; }</style>",
+  "structure": { "docsTree": [...] }
+}]
+```
+
+Overridable fields: `template`, `contentLayout`, `publicTheme`, all colors, logos, portal options, `customCSS`, `customJS`, `custom404`, `footerTemplate`, `headerIncludes`, `customFont`, `externalLinks`.

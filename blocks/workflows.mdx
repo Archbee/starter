@@ -1,0 +1,62 @@
+---
+title: Workflow
+icon: list-ordered
+---
+
+Workflows display sequential steps with numbered indicators. Use them for tutorials, setup guides, or any multi-step process.
+
+<WorkflowBlock>
+<WorkflowBlockItem>
+Install the CLI
+
+Run `npm install -g @archbee/cli` to install the Archbee CLI globally.
+</WorkflowBlockItem>
+
+<WorkflowBlockItem>
+Create a project
+
+Run `archbee new my-docs` to create a new documentation project.
+</WorkflowBlockItem>
+
+<WorkflowBlockItem>
+Start the dev server
+
+Run `archbee dev` to start the local preview at `localhost:3000`.
+</WorkflowBlockItem>
+
+<WorkflowBlockItem>
+Deploy
+
+Build and deploy your docs to production.
+</WorkflowBlockItem>
+</WorkflowBlock>
+
+## Syntax
+
+<CodeblockTabs>
+
+MDX
+
+```html
+<WorkflowBlock>
+  <WorkflowBlockItem>
+    Step Title
+
+    Step content.
+  </WorkflowBlockItem>
+</WorkflowBlock>
+```
+
+Markdown
+
+```markdown
+:::::WorkflowBlock
+::::WorkflowBlockItem
+Step Title
+
+Step content.
+::::
+:::::
+```
+
+</CodeblockTabs>

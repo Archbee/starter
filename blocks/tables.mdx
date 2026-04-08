@@ -1,0 +1,95 @@
+---
+title: Tables
+icon: table
+---
+
+Tables organize structured data in rows and columns. Use standard Markdown tables or HTML tables with colored cells.
+
+## Markdown Table
+
+| Feature | Free | Pro | Enterprise |
+|---------|------|-----|------------|
+| Spaces | 3 | 20 | Unlimited |
+| API Access | - | Yes | Yes |
+| Custom Domain | - | - | Yes |
+| SSO/SAML | - | - | Yes |
+
+## HTML Table with Colors
+
+<table isTableHeaderOn="true" columnWidths="200,200,200">
+  <tr>
+    <td darkBackgroundColor="#1E40AF" lightBackgroundColor="#3B82F6" align="center">
+      <p><strong>Service</strong></p>
+    </td>
+    <td darkBackgroundColor="#1E40AF" lightBackgroundColor="#3B82F6" align="center">
+      <p><strong>Status</strong></p>
+    </td>
+    <td darkBackgroundColor="#1E40AF" lightBackgroundColor="#3B82F6" align="center">
+      <p><strong>Uptime</strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+      <p>API</p>
+    </td>
+    <td darkBackgroundColor="#166534" lightBackgroundColor="#86EFAC" align="center">
+      <p>Operational</p>
+    </td>
+    <td align="center">
+      <p>99.99%</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+      <p>CDN</p>
+    </td>
+    <td darkBackgroundColor="#166534" lightBackgroundColor="#86EFAC" align="center">
+      <p>Operational</p>
+    </td>
+    <td align="center">
+      <p>99.98%</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+      <p>Search</p>
+    </td>
+    <td darkBackgroundColor="#9A3412" lightBackgroundColor="#FED7AA" align="center">
+      <p>Degraded</p>
+    </td>
+    <td align="center">
+      <p>99.2%</p>
+    </td>
+  </tr>
+</table>
+
+## Syntax
+
+<CodeblockTabs>
+
+MDX
+
+```html
+<table isTableHeaderOn="true" columnWidths="200,200">
+  <tr>
+    <td align="center"><p><strong>Name</strong></p></td>
+    <td align="center"><p><strong>Value</strong></p></td>
+  </tr>
+  <tr>
+    <td><p>Item</p></td>
+    <td><p>123</p></td>
+  </tr>
+</table>
+```
+
+Markdown
+
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+```
+
+</CodeblockTabs>
+
+HTML table attributes: `isTableHeaderOn`, `columnWidths`, `lightBackgroundColor`, `darkBackgroundColor`, `align`, `colSpan`, `rowSpan`.

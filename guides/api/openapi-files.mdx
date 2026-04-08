@@ -1,0 +1,90 @@
+---
+title: OpenAPI & Files
+description: Sync API specs, upload files, export data
+icon: upload
+---
+
+## sync-openapi
+
+Create API reference documentation from an OpenAPI/Swagger spec.
+
+```bash
+archbee sync-openapi --doc-space-id <ID> --api-key <KEY> --file ./openapi.yaml
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--file` | Yes | Path to `.json`, `.yaml`, `.yml`, or `.zip` file |
+| `--doc-tree-id` | No | Existing tree ID to update (re-sync) |
+| `--type` | No | `openapi` (default) or `postman` |
+| `--create-intro` | No | Create an introduction page |
+| `--create-schema-category` | No | Create a schemas category |
+| `--show-download` | No | Show download button for the spec |
+| `--language-examples` | No | Code examples: `"curl,python,javascript"` |
+
+Returns a `docTreeId` for use with `info-openapi` or re-syncing.
+
+## info-openapi
+
+Retrieve the stored OpenAPI spec from a synced tree.
+
+```bash
+archbee info-openapi --doc-space-id <ID> --api-key <KEY> --doc-tree-id <TREE_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--doc-tree-id` | Yes | Tree ID from `sync-openapi` |
+
+## upload
+
+Upload a file to the Archbee file manager.
+
+```bash
+archbee upload --doc-space-id <ID> --api-key <KEY> --file ./logo.png
+archbee upload --doc-space-id <ID> --api-key <KEY> --file ./secret.pdf --private
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--file` | Yes | Path to file |
+| `--private` | No | Upload as private (default: public) |
+
+## export
+
+Export team documentation as a signed download URL.
+
+```bash
+archbee export --doc-space-id <ID> --api-key <KEY> --team-id <TEAM_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--team-id` | Yes | Team ID |
+| `--export-this-space-only` | No | Export only this space (default: all) |
+| `--export-as-link` | No | Return signed URL (default: true) |
+
+## display-rules
+
+List conditional content display rules for the team.
+
+```bash
+archbee display-rules --doc-space-id <ID> --api-key <KEY> --team-id <TEAM_ID>
+```
+
+## merge-suggestion / discard-suggestion
+
+Manage document suggestions.
+
+```bash
+archbee merge-suggestion --doc-space-id <ID> --api-key <KEY> --suggestion-id <SUGGESTION_ID>
+archbee discard-suggestion --doc-space-id <ID> --api-key <KEY> --suggestion-id <SUGGESTION_ID>
+```

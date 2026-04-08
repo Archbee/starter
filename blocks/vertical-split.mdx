@@ -1,0 +1,91 @@
+---
+title: Vertical Split
+icon: columns-2
+---
+
+Vertical splits create side-by-side content layouts with configurable alignment.
+
+## Equal Columns (middle)
+
+<VerticalSplit layout="middle">
+<VerticalSplitItem>
+
+### Left Column
+
+This column takes up equal space with the right column.
+
+</VerticalSplitItem>
+<VerticalSplitItem>
+
+### Right Column
+
+Perfect for comparing features, showing before/after, or code + explanation.
+
+</VerticalSplitItem>
+</VerticalSplit>
+
+## Left-heavy Layout
+
+<VerticalSplit layout="left">
+<VerticalSplitItem>
+
+### Main Content
+
+The left column is wider — use this when the left side has the primary content and the right side has supplementary info.
+
+</VerticalSplitItem>
+<VerticalSplitItem>
+
+<hint type="info">
+This sidebar provides extra context.
+</hint>
+
+</VerticalSplitItem>
+</VerticalSplit>
+
+## Right-heavy Layout
+
+<VerticalSplit layout="right">
+<VerticalSplitItem>
+
+**Quick links:**
+- [Configuration](/essentials/configuration)
+- [Navigation](/essentials/navigation)
+
+</VerticalSplitItem>
+<VerticalSplitItem>
+
+### Detailed Explanation
+
+The right column is wider — use this when the right side has the primary content.
+
+</VerticalSplitItem>
+</VerticalSplit>
+
+## Syntax
+
+<CodeblockTabs>
+
+MDX
+
+```html
+<VerticalSplit layout="left|middle|right">
+  <VerticalSplitItem>Left content.</VerticalSplitItem>
+  <VerticalSplitItem>Right content.</VerticalSplitItem>
+</VerticalSplit>
+```
+
+Markdown
+
+```markdown
+:::::VerticalSplit{layout="middle"}
+::::VerticalSplitItem
+Left content.
+::::
+::::VerticalSplitItem
+Right content.
+::::
+:::::
+```
+
+</CodeblockTabs>

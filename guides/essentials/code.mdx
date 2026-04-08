@@ -1,0 +1,83 @@
+---
+title: Code Blocks
+description: Syntax highlighting and code examples
+icon: terminal
+---
+
+## Basic Code Block
+
+Use triple backticks with a language tag:
+
+````markdown
+```javascript
+const greeting = 'Hello, world!'
+console.log(greeting)
+```
+````
+
+Renders as:
+
+```javascript
+const greeting = 'Hello, world!'
+console.log(greeting)
+```
+
+## Supported Languages
+
+Common languages: `javascript`, `typescript`, `python`, `bash`, `json`, `yaml`, `html`, `css`, `jsx`, `tsx`, `sql`, `go`, `rust`, `ruby`, `php`, `java`, `c`, `cpp`, `swift`, `kotlin`, `markdown`.
+
+## Inline Code
+
+Use single backticks for inline code: `npm install @archbee/cli`
+
+## Code Block Tabs
+
+Show the same example in multiple languages:
+
+```
+:::::codeblocktabs
+
+```bash
+npm install -g @archbee/cli
+```
+
+```bash
+pnpm add -g @archbee/cli
+```
+
+```bash
+yarn global add @archbee/cli
+```
+
+## JSON Examples
+
+Configuration examples render with syntax highlighting:
+
+```json
+{
+  "name": "My Docs",
+  "template": "stripe",
+  "docsPath": "guides",
+  "structure": {
+    "docsTree": [
+      { "path": "index", "name": "Home" }
+    ]
+  }
+}
+```
+
+## Shell Commands
+
+```bash
+# Install
+npm install -g @archbee/cli
+
+# Create a project
+archbee new my-docs
+
+# Start dev server
+cd my-docs && archbee dev
+
+# Validate
+archbee validate
+```

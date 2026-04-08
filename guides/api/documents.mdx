@@ -1,0 +1,118 @@
+---
+title: Documents
+description: Create, read, update, delete, and search documents
+icon: file-text
+---
+
+All commands require `--doc-space-id` and `--api-key`.
+
+## get-doc
+
+Retrieve a document by ID.
+
+```bash
+archbee get-doc --doc-space-id <ID> --api-key <KEY> --doc-id <DOC_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--doc-id` | Yes | Document ID |
+| `--format` | No | Output format: `markdown` (default), `html`, `json`, `source` |
+
+## create-doc
+
+Create a new document or update an existing one.
+
+```bash
+# Inline content
+archbee create-doc --doc-space-id <ID> --api-key <KEY> --title "My Doc" --content "# Hello\n\nWorld"
+
+# From file
+archbee create-doc --doc-space-id <ID> --api-key <KEY> --title "My Doc" --file ./guide.md
+
+# Update existing
+archbee create-doc --doc-space-id <ID> --api-key <KEY> --doc-id <DOC_ID> --file ./updated.md
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--content` | Yes* | Markdown or JSON content (`\n` for newlines) |
+| `--file` | Yes* | Read content from file (instead of `--content`) |
+| `--format` | No | Content format: `markdown` (default) or `json` |
+| `--title` | No | Document title |
+| `--doc-id` | No | Existing document ID to update |
+| `--parent-doc-id` | No | Parent document ID (nest under a doc) |
+| `--description` | No | Document description |
+| `--slug` | No | Custom URL slug |
+| `--alias` | No | URL alias |
+| `--hidden` | No | Hide from sidebar (still accessible via URL) |
+| `--sorting` | No | Insertion order: `alphabetical` or `chronological` |
+| `--preview-img-url` | No | Preview image URL |
+| `--conditional-rule-id` | No | Display rule ID |
+
+*One of `--content` or `--file` is required.
+
+## delete-doc
+
+Permanently delete a document.
+
+```bash
+archbee delete-doc --doc-space-id <ID> --api-key <KEY> --doc-id <DOC_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--doc-id` | Yes | Document ID to delete |
+
+## search-docs
+
+Search documents in a space.
+
+```bash
+# Search by keyword
+archbee search-docs --doc-space-id <ID> --api-key <KEY> --query "authentication"
+
+# List all documents
+archbee search-docs --doc-space-id <ID> --api-key <KEY>
+
+# Filter by parent document
+archbee search-docs --doc-space-id <ID> --api-key <KEY> --parent-doc-id <PARENT_ID>
+
+# AI-powered search
+archbee search-docs --doc-space-id <ID> --api-key <KEY> --query "how to authenticate" --type ai-chat
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--query` | No | Search query (omit to list all docs) |
+| `--type` | No | Search type: `words` (default), `ai-chat`, `ai-retrieval` |
+| `--doc-id` | No | Return only this document |
+| `--parent-doc-id` | No | Return only children of this doc (`"null"` for root) |
+| `--search-only-title` | No | Search titles only |
+| `--data-text-format` | No | Return content as `markdown` or `html` |
+
+## import-content
+
+Import markdown files or zip archives into a space.
+
+```bash
+# Single file
+archbee import-content --doc-space-id <ID> --api-key <KEY> --file ./guide.md
+
+# Zip archive (preserves folder structure as categories)
+archbee import-content --doc-space-id <ID> --api-key <KEY> --file ./docs.zip
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--file` | Yes | Path to `.md` or `.zip` file |
