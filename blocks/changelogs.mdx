@@ -1,51 +1,60 @@
 ---
 title: Changelog
-icon: clock
+icon: {"lucideIcon":"Clock"}
+docTags: changelog
+createdAt: Wed Apr 29 2026 10:25:59 GMT+0300 (Eastern European Summer Time)
+updatedAt: Wed Apr 29 2026 10:37:48 GMT+0300 (Eastern European Summer Time)
 ---
 
 Changelog blocks display release notes with categorized items.
 
 <Changelog title="v2.0.0 — Multi-Space Support">
-<ChangelogItem type="added" description="Multi-space navigation with navbar switcher"/>
-<ChangelogItem type="added" description="Per-site appearance overrides (colors, template, fonts)"/>
-<ChangelogItem type="improved" description="Hot reload now updates config changes in real time"/>
-<ChangelogItem type="fixed" description="Code drawer not appearing on API endpoint pages"/>
-<ChangelogItem type="knownIssue" description="Duplicate heading slugs in table of contents"/>
+  <ChangelogItem type="added" description="Multi-space navigation with navbar switcher" />
+
+  <ChangelogItem type="added" description="Per-site appearance overrides (colors, template, fonts)" />
+
+  <ChangelogItem type="improved" description="Hot reload now updates config changes in real time" />
+
+  <ChangelogItem type="fixed" description="Code drawer not appearing on API endpoint pages" />
+
+  <ChangelogItem type="knownIssue" description="Duplicate heading slugs in table of contents" />
 </Changelog>
 
 <Changelog title="v1.5.0 — Docusaurus Support">
-<ChangelogItem type="added" description="Auto-detect and render Docusaurus projects"/>
-<ChangelogItem type="added" description="Blog directory as separate space"/>
-<ChangelogItem type="improved" description="Custom CSS extraction from Docusaurus themes"/>
-<ChangelogItem type="fixed" description="TypeScript config files crashing on load"/>
-<ChangelogItem type="broken" description="Deprecated: --no-public flag replaced with --private"/>
+  <ChangelogItem type="added" description="Auto-detect and render Docusaurus projects" />
+
+  <ChangelogItem type="added" description="Blog directory as separate space" />
+
+  <ChangelogItem type="improved" description="Custom CSS extraction from Docusaurus themes" />
+
+  <ChangelogItem type="fixed" description="TypeScript config files crashing on load" />
+
+  <ChangelogItem type="broken" description="Deprecated: --no-public flag replaced with --private" />
 </Changelog>
 
 ## Syntax
 
 <CodeblockTabs>
+  MDX
 
-MDX
+  ```html
+  <Changelog title="Release Title">
+    <ChangelogItem type="added" description="What was added"/>
+    <ChangelogItem type="fixed" description="What was fixed"/>
+    <ChangelogItem type="improved" description="What was improved"/>
+    <ChangelogItem type="broken" description="What broke or was deprecated"/>
+    <ChangelogItem type="knownIssue" description="Known issues"/>
+  </Changelog>
+  ```
 
-```html
-<Changelog title="Release Title">
-  <ChangelogItem type="added" description="What was added"/>
-  <ChangelogItem type="fixed" description="What was fixed"/>
-  <ChangelogItem type="improved" description="What was improved"/>
-  <ChangelogItem type="broken" description="What broke or was deprecated"/>
-  <ChangelogItem type="knownIssue" description="Known issues"/>
-</Changelog>
-```
+  Markdown
 
-Markdown
-
-```markdown
-:::Changelog{title="Release Title"}
-::ChangelogItem{type="added" description="What was added"}
-::ChangelogItem{type="fixed" description="What was fixed"}
-:::
-```
-
+  ```markdown
+  :::Changelog{title="Release Title"}
+  ::ChangelogItem{type="added" description="What was added"}
+  ::ChangelogItem{type="fixed" description="What was fixed"}
+  :::
+  ```
 </CodeblockTabs>
 
 Item types: `added`, `fixed`, `improved`, `broken`, `knownIssue`
