@@ -4,14 +4,11 @@
   "template": "windy",
   "contentLayout": "two-column",
   "publicTheme": "light",
-
   "faviconURL": "/public/favicon.ico",
   "publicLogoURL": "/public/logo-light.png",
   "darkPublicLogoURL": "/public/logo-dark.png",
-
   "hostingColor": "#2166AE",
   "darkHostingColor": "#2166AE",
-
   "showReadTime": true,
   "showLastUpdate": true,
   "showThemeSwitcher": true,
@@ -19,57 +16,98 @@
   "hasPrimaryColorLinks": true,
   "isArchbeeBrandVisible": true,
   "isPublicBackgroundEnabled": true,
-
-  "docsPath": "guides",
+  "docsPath": "guides/",
   "structure": {
     "docsTree": [
       {
+        "children": [],
         "isLink": true,
         "linkTitle": "Archbee Docs",
         "linkHref": "https://www.archbee.com/docs",
         "linkOpensInNewTab": true
       },
       {
-        "isCategory": true,
         "categoryName": "Getting Started",
+        "isCategory": true,
         "children": [
-          { "path": "index.mdx" },
-          { "path": "quickstart.mdx" },
-          { "path": "development.mdx" }
+          {
+            "path": "index.mdx",
+            "children": []
+          },
+          {
+            "path": "quickstart.mdx",
+            "children": []
+          },
+          {
+            "path": "development.mdx",
+            "children": []
+          }
         ]
       },
       {
-        "isCategory": true,
         "categoryName": "Essentials",
+        "isCategory": true,
         "children": [
-          { "path": "essentials/configuration.mdx" },
-          { "path": "essentials/navigation.mdx" },
-          { "path": "essentials/markdown.mdx" },
-          { "path": "essentials/code.mdx" },
-          { "path": "essentials/images.mdx" }
+          {
+            "path": "essentials/configuration.mdx",
+            "children": []
+          },
+          {
+            "path": "essentials/navigation.mdx",
+            "children": []
+          },
+          {
+            "path": "essentials/markdown.mdx",
+            "children": []
+          },
+          {
+            "path": "essentials/code.mdx",
+            "children": []
+          },
+          {
+            "path": "essentials/images.mdx",
+            "children": []
+          }
         ]
       },
       {
-        "isCategory": true,
         "categoryName": "Customization",
+        "isCategory": true,
         "children": [
-          { "path": "customization/templates.mdx" },
-          { "path": "customization/theming.mdx" },
-          { "path": "customization/branding.mdx" }
+          {
+            "path": "customization/templates.mdx",
+            "children": []
+          },
+          {
+            "path": "customization/theming.mdx",
+            "children": []
+          },
+          {
+            "path": "customization/branding.mdx",
+            "children": []
+          }
         ]
       },
       {
-        "isCategory": true,
         "categoryName": "API Commands",
+        "isCategory": true,
         "children": [
-          { "path": "api/documents.mdx" },
-          { "path": "api/spaces.mdx" },
-          { "path": "api/openapi-files.mdx" }
+          {
+            "path": "api/documents.mdx",
+            "children": []
+          },
+          {
+            "path": "api/spaces.mdx",
+            "children": []
+          },
+          {
+            "path": "api/openapi-files.mdx",
+            "children": []
+          }
         ]
       }
     ]
   },
-
   "sites": [
     {
       "name": "Blocks",
@@ -81,48 +119,92 @@
             "isCategory": true,
             "categoryName": "Basic",
             "children": [
-              { "path": "headings.mdx" },
-              { "path": "expandable-headings.mdx" },
-              { "path": "lists.mdx" },
-              { "path": "tables.mdx" },
-              { "path": "buttons.mdx" },
-              { "path": "callouts.mdx" },
-              { "path": "dividers.mdx" },
-              { "path": "vertical-split.mdx" },
-              { "path": "blockquotes.mdx" },
-              { "path": "link-grids.mdx" },
-              { "path": "workflows.mdx" },
-              { "path": "tabs.mdx" }
+              {
+                "path": "headings.mdx"
+              },
+              {
+                "path": "expandable-headings.mdx"
+              },
+              {
+                "path": "lists.mdx"
+              },
+              {
+                "path": "tables.mdx"
+              },
+              {
+                "path": "buttons.mdx"
+              },
+              {
+                "path": "callouts.mdx"
+              },
+              {
+                "path": "dividers.mdx"
+              },
+              {
+                "path": "vertical-split.mdx"
+              },
+              {
+                "path": "blockquotes.mdx"
+              },
+              {
+                "path": "link-grids.mdx"
+              },
+              {
+                "path": "workflows.mdx"
+              },
+              {
+                "path": "tabs.mdx"
+              }
             ]
           },
           {
             "isCategory": true,
             "categoryName": "Media",
             "children": [
-              { "path": "files.mdx" },
-              { "path": "images.mdx" },
-              { "path": "embeds.mdx" }
+              {
+                "path": "files.mdx"
+              },
+              {
+                "path": "images.mdx"
+              },
+              {
+                "path": "embeds.mdx"
+              }
             ]
           },
           {
             "isCategory": true,
             "categoryName": "Developer",
             "children": [
-              { "path": "code-blocks.mdx" },
-              { "path": "code-drawers.mdx" },
-              { "path": "diagrams.mdx" },
-              { "path": "math.mdx" },
-              { "path": "api-endpoints.mdx" },
-              { "path": "changelogs.mdx" }
+              {
+                "path": "code-blocks.mdx"
+              },
+              {
+                "path": "code-drawers.mdx"
+              },
+              {
+                "path": "diagrams.mdx"
+              },
+              {
+                "path": "math.mdx"
+              },
+              {
+                "path": "api-endpoints.mdx"
+              },
+              {
+                "path": "changelogs.mdx"
+              }
             ]
           }
         ]
       }
     }
   ],
-
   "externalLinks": [
-    { "label": "Book a Demo", "url": "https://archbee.com/book-demo" },
+    {
+      "label": "Book a Demo",
+      "url": "https://archbee.com/book-demo"
+    },
     {
       "label": "Sign Up ->",
       "url": "https://app.archbee.com/signup",
