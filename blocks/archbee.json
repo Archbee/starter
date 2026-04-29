@@ -1,0 +1,111 @@
+{
+  "docsPath": "blocks/",
+  "structure": {
+    "assets": "assets/",
+    "docsTree": [
+      {
+        "categoryName": "Basic",
+        "isCategory": true,
+        "children": [
+          {
+            "path": "headings",
+            "children": []
+          },
+          {
+            "path": "expandable-headings",
+            "children": []
+          },
+          {
+            "path": "lists",
+            "children": []
+          },
+          {
+            "path": "tables",
+            "children": []
+          },
+          {
+            "path": "buttons",
+            "children": []
+          },
+          {
+            "path": "callouts",
+            "children": []
+          },
+          {
+            "path": "dividers",
+            "children": []
+          },
+          {
+            "path": "vertical-split",
+            "children": []
+          },
+          {
+            "path": "blockquotes",
+            "children": []
+          },
+          {
+            "path": "link-grids",
+            "children": []
+          },
+          {
+            "path": "workflows",
+            "children": []
+          },
+          {
+            "path": "tabs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryName": "Media",
+        "isCategory": true,
+        "children": [
+          {
+            "path": "files",
+            "children": []
+          },
+          {
+            "path": "images",
+            "children": []
+          },
+          {
+            "path": "embeds",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryName": "Developer",
+        "isCategory": true,
+        "children": [
+          {
+            "path": "code-blocks",
+            "children": []
+          },
+          {
+            "path": "code-drawers",
+            "children": []
+          },
+          {
+            "path": "diagrams",
+            "children": []
+          },
+          {
+            "path": "math",
+            "children": []
+          },
+          {
+            "path": "api-endpoints",
+            "children": []
+          },
+          {
+            "path": "changelogs",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "shadowDocs": []
+}

@@ -1,0 +1,23 @@
+---
+title: Headings
+icon: 🚀
+docTags: 
+createdAt: Wed Apr 29 2026 09:21:20 GMT+0300 (Eastern European Summer Time)
+updatedAt: Wed Apr 29 2026 09:26:21 GMT+0300 (Eastern European Summer Time)
+---
+
+Headings structure your content into sections. Three levels are supported.
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+## Syntax
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+```
