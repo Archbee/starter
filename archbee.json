@@ -4,14 +4,11 @@
   "template": "windy",
   "contentLayout": "two-column",
   "publicTheme": "light",
-
   "faviconURL": "/public/favicon.ico",
   "publicLogoURL": "/public/logo-light.png",
   "darkPublicLogoURL": "/public/logo-dark.png",
-
   "hostingColor": "#2166AE",
   "darkHostingColor": "#2166AE",
-
   "showReadTime": true,
   "showLastUpdate": true,
   "showThemeSwitcher": true,
@@ -19,61 +16,98 @@
   "hasPrimaryColorLinks": true,
   "isArchbeeBrandVisible": true,
   "isPublicBackgroundEnabled": true,
-
-  "docsPath": "guides",
+  "docsPath": "guides/",
   "structure": {
     "docsTree": [
       {
+        "children": [],
         "isLink": true,
         "linkTitle": "Archbee Docs",
         "linkHref": "https://www.archbee.com/docs",
         "linkOpensInNewTab": true
       },
       {
-        "isCategory": true,
         "categoryName": "Getting Started",
-        "icon": "rocket",
+        "isCategory": true,
         "children": [
-          { "path": "index", "name": "Introduction", "icon": "house" },
-          { "path": "quickstart", "name": "Quickstart", "icon": "rocket" },
-          { "path": "development", "name": "Development", "icon": "code" }
+          {
+            "path": "index",
+            "children": []
+          },
+          {
+            "path": "quickstart",
+            "children": []
+          },
+          {
+            "path": "development",
+            "children": []
+          }
         ]
       },
       {
-        "isCategory": true,
         "categoryName": "Essentials",
-        "icon": "book-text",
+        "isCategory": true,
         "children": [
-          { "path": "essentials/configuration", "name": "Configuration" },
-          { "path": "essentials/navigation", "name": "Navigation" },
-          { "path": "essentials/markdown", "name": "Markdown" },
-          { "path": "essentials/code", "name": "Code Blocks" },
-          { "path": "essentials/images", "name": "Images & Assets" }
+          {
+            "path": "essentials/configuration",
+            "children": []
+          },
+          {
+            "path": "essentials/navigation",
+            "children": []
+          },
+          {
+            "path": "essentials/markdown",
+            "children": []
+          },
+          {
+            "path": "essentials/code",
+            "children": []
+          },
+          {
+            "path": "essentials/images",
+            "children": []
+          }
         ]
       },
       {
-        "isCategory": true,
         "categoryName": "Customization",
-        "icon": "paintbrush",
+        "isCategory": true,
         "children": [
-          { "path": "customization/templates", "name": "Templates" },
-          { "path": "customization/theming", "name": "Theming" },
-          { "path": "customization/branding", "name": "Branding" }
+          {
+            "path": "customization/templates",
+            "children": []
+          },
+          {
+            "path": "customization/theming",
+            "children": []
+          },
+          {
+            "path": "customization/branding",
+            "children": []
+          }
         ]
       },
       {
-        "isCategory": true,
         "categoryName": "API Commands",
-        "icon": "terminal",
+        "isCategory": true,
         "children": [
-          { "path": "api/documents", "name": "Documents" },
-          { "path": "api/spaces", "name": "Spaces" },
-          { "path": "api/openapi-files", "name": "OpenAPI & Files" }
+          {
+            "path": "api/documents",
+            "children": []
+          },
+          {
+            "path": "api/spaces",
+            "children": []
+          },
+          {
+            "path": "api/openapi-files",
+            "children": []
+          }
         ]
       }
     ]
   },
-
   "sites": [
     {
       "name": "Blocks",
@@ -86,14 +120,26 @@
             "categoryName": "Basic",
             "icon": "text",
             "children": [
-              { "path": "headings", "name": "Headings", "icon": "heading" },
+              {
+                "path": "headings",
+                "name": "Headings",
+                "icon": "heading"
+              },
               {
                 "path": "expandable-headings",
                 "name": "Expandable Headings",
                 "icon": "chevrons-down"
               },
-              { "path": "lists", "name": "Lists", "icon": "list" },
-              { "path": "tables", "name": "Tables", "icon": "table" },
+              {
+                "path": "lists",
+                "name": "Lists",
+                "icon": "list"
+              },
+              {
+                "path": "tables",
+                "name": "Tables",
+                "icon": "table"
+              },
               {
                 "path": "buttons",
                 "name": "Button",
@@ -114,7 +160,11 @@
                 "name": "Vertical Split",
                 "icon": "columns-2"
               },
-              { "path": "blockquotes", "name": "Blockquote", "icon": "quote" },
+              {
+                "path": "blockquotes",
+                "name": "Blockquote",
+                "icon": "quote"
+              },
               {
                 "path": "link-grids",
                 "name": "Link Grid",
@@ -125,7 +175,11 @@
                 "name": "Workflow",
                 "icon": "list-ordered"
               },
-              { "path": "tabs", "name": "Tabs", "icon": "layers" }
+              {
+                "path": "tabs",
+                "name": "Tabs",
+                "icon": "layers"
+              }
             ]
           },
           {
@@ -133,9 +187,21 @@
             "categoryName": "Media",
             "icon": "image",
             "children": [
-              { "path": "files", "name": "File", "icon": "paperclip" },
-              { "path": "images", "name": "Image", "icon": "image" },
-              { "path": "embeds", "name": "YouTube or Vimeo", "icon": "video" }
+              {
+                "path": "files",
+                "name": "File",
+                "icon": "paperclip"
+              },
+              {
+                "path": "images",
+                "name": "Image",
+                "icon": "image"
+              },
+              {
+                "path": "embeds",
+                "name": "YouTube or Vimeo",
+                "icon": "video"
+              }
             ]
           },
           {
@@ -148,28 +214,42 @@
                 "name": "Code Editor",
                 "icon": "file-code"
               },
-              { "path": "code-drawers", "name": "Code Drawer", "icon": "code" },
+              {
+                "path": "code-drawers",
+                "name": "Code Drawer",
+                "icon": "code"
+              },
               {
                 "path": "diagrams",
                 "name": "Mermaid Diagram",
                 "icon": "git-branch"
               },
-              { "path": "math", "name": "TeX", "icon": "sigma" },
+              {
+                "path": "math",
+                "name": "TeX",
+                "icon": "sigma"
+              },
               {
                 "path": "api-endpoints",
                 "name": "API Endpoint",
                 "icon": "plug"
               },
-              { "path": "changelogs", "name": "Changelog", "icon": "clock" }
+              {
+                "path": "changelogs",
+                "name": "Changelog",
+                "icon": "clock"
+              }
             ]
           }
         ]
       }
     }
   ],
-
   "externalLinks": [
-    { "label": "Book a Demo", "url": "https://archbee.com/book-demo" },
+    {
+      "label": "Book a Demo",
+      "url": "https://archbee.com/book-demo"
+    },
     {
       "label": "Sign Up ->",
       "url": "https://app.archbee.com/signup",
