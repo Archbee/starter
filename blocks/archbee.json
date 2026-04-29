@@ -1,0 +1,111 @@
+{
+  "docsPath": "blocks/",
+  "structure": {
+    "assets": "assets/",
+    "docsTree": [
+      {
+        "categoryName": "Basic",
+        "isCategory": true,
+        "children": [
+          {
+            "path": "headings.mdx",
+            "children": []
+          },
+          {
+            "path": "expandable-headings.mdx",
+            "children": []
+          },
+          {
+            "path": "lists.mdx",
+            "children": []
+          },
+          {
+            "path": "tables.mdx",
+            "children": []
+          },
+          {
+            "path": "buttons.mdx",
+            "children": []
+          },
+          {
+            "path": "callouts.mdx",
+            "children": []
+          },
+          {
+            "path": "dividers.mdx",
+            "children": []
+          },
+          {
+            "path": "vertical-split.mdx",
+            "children": []
+          },
+          {
+            "path": "blockquotes.mdx",
+            "children": []
+          },
+          {
+            "path": "link-grids.mdx",
+            "children": []
+          },
+          {
+            "path": "workflows.mdx",
+            "children": []
+          },
+          {
+            "path": "tabs.mdx",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryName": "Media",
+        "isCategory": true,
+        "children": [
+          {
+            "path": "files.mdx",
+            "children": []
+          },
+          {
+            "path": "images.mdx",
+            "children": []
+          },
+          {
+            "path": "embeds.mdx",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryName": "Developer",
+        "isCategory": true,
+        "children": [
+          {
+            "path": "code-blocks.mdx",
+            "children": []
+          },
+          {
+            "path": "code-drawers.mdx",
+            "children": []
+          },
+          {
+            "path": "diagrams.mdx",
+            "children": []
+          },
+          {
+            "path": "math.mdx",
+            "children": []
+          },
+          {
+            "path": "api-endpoints.mdx",
+            "children": []
+          },
+          {
+            "path": "changelogs.mdx",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "shadowDocs": []
+}
