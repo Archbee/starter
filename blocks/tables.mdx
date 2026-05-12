@@ -1,64 +1,133 @@
 ---
 title: Tables
-icon: table
+icon: {"lucideIcon":"Table"}
+docTags: 
+createdAt: Wed Apr 29 2026 10:25:59 GMT+0300 (Eastern European Summer Time)
+updatedAt: Wed Apr 29 2026 15:25:04 GMT+0300 (Eastern European Summer Time)
 ---
 
 Tables organize structured data in rows and columns. Use standard Markdown tables or HTML tables with colored cells.
 
 ## Markdown Table
 
-| Feature | Free | Pro | Enterprise |
-|---------|------|-----|------------|
-| Spaces | 3 | 20 | Unlimited |
-| API Access | - | Yes | Yes |
-| Custom Domain | - | - | Yes |
-| SSO/SAML | - | - | Yes |
+<table isTableHeaderOn="true" columnWidths="165,165,165,166">
+  <tr>
+    <td>
+      Feature
+    </td>
+    <td>
+      Free
+    </td>
+    <td>
+      Pro
+    </td>
+    <td>
+      Enterprise
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Spaces
+    </td>
+    <td>
+      3
+    </td>
+    <td>
+      20
+    </td>
+    <td>
+      Unlimited
+    </td>
+  </tr>
+  <tr>
+    <td>
+      API Access
+    </td>
+    <td>
+      \-
+    </td>
+    <td>
+      Yes
+    </td>
+    <td>
+      Yes
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Custom Domain
+    </td>
+    <td>
+      \-
+    </td>
+    <td>
+      \-
+    </td>
+    <td>
+      Yes
+    </td>
+  </tr>
+  <tr>
+    <td>
+      SSO/SAML
+    </td>
+    <td>
+      \-
+    </td>
+    <td>
+      \-
+    </td>
+    <td>
+      Yes
+    </td>
+  </tr>
+</table>
 
 ## HTML Table with Colors
 
 <table isTableHeaderOn="true" columnWidths="200,200,200">
   <tr>
-    <td darkBackgroundColor="#1E40AF" lightBackgroundColor="#3B82F6" align="center">
-      <p><strong>Service</strong></p>
+    <td lightBackgroundColor="#3B82F6" darkBackgroundColor="#1E40AF" align="center">
+      **Service**
     </td>
-    <td darkBackgroundColor="#1E40AF" lightBackgroundColor="#3B82F6" align="center">
-      <p><strong>Status</strong></p>
+    <td lightBackgroundColor="#3B82F6" darkBackgroundColor="#1E40AF" align="center">
+      **Status**
     </td>
-    <td darkBackgroundColor="#1E40AF" lightBackgroundColor="#3B82F6" align="center">
-      <p><strong>Uptime</strong></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left">
-      <p>API</p>
-    </td>
-    <td darkBackgroundColor="#166534" lightBackgroundColor="#86EFAC" align="center">
-      <p>Operational</p>
-    </td>
-    <td align="center">
-      <p>99.99%</p>
+    <td lightBackgroundColor="#3B82F6" darkBackgroundColor="#1E40AF" align="center">
+      **Uptime**
     </td>
   </tr>
   <tr>
     <td align="left">
-      <p>CDN</p>
+      API
     </td>
-    <td darkBackgroundColor="#166534" lightBackgroundColor="#86EFAC" align="center">
-      <p>Operational</p>
+    <td lightBackgroundColor="#86EFAC" darkBackgroundColor="#166534" align="center">
+      Operational
     </td>
     <td align="center">
-      <p>99.98%</p>
+      99.99%
     </td>
   </tr>
   <tr>
     <td align="left">
-      <p>Search</p>
+      CDN
     </td>
-    <td darkBackgroundColor="#9A3412" lightBackgroundColor="#FED7AA" align="center">
-      <p>Degraded</p>
+    <td lightBackgroundColor="#86EFAC" darkBackgroundColor="#166534" align="center">
+      Operational
     </td>
     <td align="center">
-      <p>99.2%</p>
+      99.98%
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+      Search
+    </td>
+    <td lightBackgroundColor="#FED7AA" darkBackgroundColor="#9A3412" align="center">
+      Degraded
+    </td>
+    <td align="center">
+      99.2%
     </td>
   </tr>
 </table>
@@ -66,30 +135,28 @@ Tables organize structured data in rows and columns. Use standard Markdown table
 ## Syntax
 
 <CodeblockTabs>
+  MDX
 
-MDX
+  ```html
+  <table isTableHeaderOn="true" columnWidths="200,200">
+    <tr>
+      <td align="center"><p><strong>Name</strong></p></td>
+      <td align="center"><p><strong>Value</strong></p></td>
+    </tr>
+    <tr>
+      <td><p>Item</p></td>
+      <td><p>123</p></td>
+    </tr>
+  </table>
+  ```
 
-```html
-<table isTableHeaderOn="true" columnWidths="200,200">
-  <tr>
-    <td align="center"><p><strong>Name</strong></p></td>
-    <td align="center"><p><strong>Value</strong></p></td>
-  </tr>
-  <tr>
-    <td><p>Item</p></td>
-    <td><p>123</p></td>
-  </tr>
-</table>
-```
+  Markdown
 
-Markdown
-
-```markdown
-| Column 1 | Column 2 |
-|----------|----------|
-| Cell 1   | Cell 2   |
-```
-
+  ```markdown
+  | Column 1 | Column 2 |
+  |----------|----------|
+  | Cell 1   | Cell 2   |
+  ```
 </CodeblockTabs>
 
 HTML table attributes: `isTableHeaderOn`, `columnWidths`, `lightBackgroundColor`, `darkBackgroundColor`, `align`, `colSpan`, `rowSpan`.

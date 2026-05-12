@@ -1,73 +1,67 @@
 ---
 title: Expandable Sections
-icon: chevrons-down
+icon: {"lucideIcon":"ChevronsDown"}
+docTags: 
+createdAt: Wed Apr 29 2026 10:25:59 GMT+0300 (Eastern European Summer Time)
+updatedAt: Mon May 04 2026 21:49:43 GMT+0300 (Eastern European Summer Time)
 ---
 
-Expandable headings let users collapse and expand content sections — ideal for FAQs, long reference docs, or optional details.
+Expandable headings let users collapse and expand content sections — ideal for FAQs, long reference docs, or optional details. bla bla
 
 <ExpandableHeading>
+  ## What is Archbee CLI?
 
-## What is Archbee CLI?
-
-Archbee CLI is a command-line tool for previewing, validating, and managing your documentation locally. It renders your Markdown/MDX files with the same templates used on the Archbee platform.
-
+  Archbee CLI is a command-line tool for previewing, validating, and managing your documentation locally. It renders your Markdown/MDX files with the same templates used on the Archbee platform.
 </ExpandableHeading>
 
 <ExpandableHeading>
+  ## How do I install it?
 
-## How do I install it?
+  ```bash
+  npm install -g @archbee/cli
+  ```
 
-```bash
-npm install -g @archbee/cli
-```
-
-Requires Node.js 18 or higher. LTS versions recommended.
-
+  Requires Node.js 18 or higher. LTS versions recommended.
 </ExpandableHeading>
 
 <ExpandableHeading>
+  ## Can I use it with Docusaurus?
 
-## Can I use it with Docusaurus?
-
-Yes — run `archbee dev` in any Docusaurus project. The CLI auto-detects `docusaurus.config.js` or `.ts` and renders it with Archbee templates. Blog, multi-instance docs, and custom CSS are all supported.
-
+  Yes — run `archbee dev` in any Docusaurus project. The CLI auto-detects `docusaurus.config.js` or `.ts` and renders it with Archbee templates. Blog, multi-instance docs, and custom CSS are all supported.
 </ExpandableHeading>
 
 <ExpandableHeading>
+  ## What templates are available?
 
-## What templates are available?
+  Four built-in templates:
 
-Four built-in templates:
-
-- **Stripe** — Clean, modern layout (default)
-- **ColorNav** — Colored navigation sidebar
-- **Windy** — Minimal, spacious design
-- **Booklet** — All docs on one page
-
+  - **Stripe** — Clean, modern layout (default)
+  - **ColorNav** — Colored navigation sidebar
+  - **Windy** — Minimal, spacious design
+  - **Booklet** — All docs on one page
 </ExpandableHeading>
 
 ## Syntax
 
 <CodeblockTabs>
+  MDX
 
-MDX
+  ```html
+  <ExpandableHeading>
+  ## Your Heading
 
-```html
-<ExpandableHeading>
-## Your Heading
+  Content that will be collapsible.
+  </ExpandableHeading>
+  ```
 
-Content that will be collapsible.
-</ExpandableHeading>
-```
+  Markdown
 
-Markdown
+  ```markdown
+  :::::ExpandableHeading
+  ## Your Heading
 
-```markdown
-:::::ExpandableHeading
-## Your Heading
-
-Content that will be collapsible.
-:::::
-```
-
+  Content that will be collapsible.
+  :::::
+  ```
 </CodeblockTabs>
+

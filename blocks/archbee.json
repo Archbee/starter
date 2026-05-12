@@ -4,6 +4,14 @@
     "assets": "assets/",
     "docsTree": [
       {
+        "path": "new-doc-3.mdx",
+        "children": []
+      },
+      {
+        "path": "new-doc-2.mdx",
+        "children": []
+      },
+      {
         "path": "new-doc.mdx",
         "children": []
       },
