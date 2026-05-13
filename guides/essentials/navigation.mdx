@@ -15,8 +15,8 @@ The main space is defined at the root level of your config:
 "docsPath": "guides",
 "structure": {
   "docsTree": [
-    { "path": "index", "name": "Introduction", "icon": "house" },
-    { "path": "quickstart", "name": "Quickstart" }
+    { "path": "index.mdx" },
+    { "path": "quickstart.mdx" }
   ]
 }
 ```
@@ -37,7 +37,7 @@ Additional spaces go in `sites[]`:
     "icon": "newspaper",
     "structure": {
       "docsTree": [
-        { "path": "march-2026", "name": "March 2026" }
+        { "path": "march-2026.mdx" }
       ]
     }
   }
@@ -65,13 +65,22 @@ Fields not specified on a site inherit from the root config.
 
 ## Documents
 
-A document is a reference to an `.mdx` or `.md` file:
+A document is a reference to an `.mdx` or `.md` file. Include the file extension in `path`:
 
 ```json
-{ "path": "quickstart", "name": "Quickstart", "icon": "rocket" }
+{ "path": "quickstart.mdx" }
 ```
 
-The `path` is relative to the space's `docsPath`. So `"path": "quickstart"` in a space with `"docsPath": "guides"` resolves to `guides/quickstart.mdx`.
+The `path` is relative to the space's `docsPath`. So `"path": "quickstart.mdx"` in a space with `"docsPath": "guides"` resolves to `guides/quickstart.mdx`.
+
+A document's title and icon come from its **frontmatter**, not from `archbee.json`:
+
+```mdx
+---
+title: Quickstart
+icon: rocket
+---
+```
 
 ## Categories
 
@@ -81,10 +90,9 @@ Categories group related documents. Set `isCategory: true` and use `categoryName
 {
   "isCategory": true,
   "categoryName": "Getting Started",
-  "icon": "book-text",
   "children": [
-    { "path": "installation", "name": "Installation" },
-    { "path": "quickstart", "name": "Quickstart" }
+    { "path": "installation.mdx" },
+    { "path": "quickstart.mdx" }
   ]
 }
 ```
@@ -111,8 +119,7 @@ Add sidebar links to external sites:
   "isLink": true,
   "linkTitle": "GitHub",
   "linkHref": "https://github.com/archbee",
-  "linkOpensInNewTab": true,
-  "icon": "github"
+  "linkOpensInNewTab": true
 }
 ```
 
@@ -122,11 +129,10 @@ A document can have children — it's both clickable and expandable:
 
 ```json
 {
-  "path": "api/overview",
-  "name": "API Overview",
+  "path": "api/overview.mdx",
   "children": [
-    { "path": "api/authentication", "name": "Authentication" },
-    { "path": "api/endpoints", "name": "Endpoints" }
+    { "path": "api/authentication.mdx" },
+    { "path": "api/endpoints.mdx" }
   ]
 }
 ```
@@ -136,7 +142,7 @@ A document can have children — it's both clickable and expandable:
 Hide a doc from the sidebar (still accessible via direct URL):
 
 ```json
-{ "path": "internal-notes", "name": "Notes", "isHidden": true }
+{ "path": "internal-notes.mdx", "isHidden": true }
 ```
 
 ## Shadow Docs
@@ -144,12 +150,23 @@ Hide a doc from the sidebar (still accessible via direct URL):
 Shadow docs are AI-only documents — visible to AI search but hidden from the navigation tree:
 
 ```json
-{ "path": "ai-context", "name": "AI Context", "isShadowDocs": true }
+{ "path": "ai-context.mdx", "isShadowDocs": true }
 ```
 
 ## Icons
 
-All icons use [Lucide](https://lucide.dev/icons/) names. Examples:
+Per-document icons go in the `.mdx` frontmatter using [Lucide](https://lucide.dev/icons/) names:
+
+```mdx
+---
+title: Quickstart
+icon: rocket
+---
+```
+
+The main space and each site in `sites[]` can also have a top-level `icon` (next to `name` / `docsPath`).
+
+Common Lucide names:
 
 | Icon Name | Use For |
 |-----------|---------|
