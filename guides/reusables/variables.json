@@ -1,0 +1,12 @@
+{
+  "Terms.WebOnly": {
+    "contentVariableId": "wL1-708Lh8p7Cki2q_RNK",
+    "name": "Terms.WebOnly",
+    "content": "WEB ONLY",
+    "scope": "global",
+    "spaceTargetMap": {
+      "ptbr": "APENAS WEB"
+    },
+    "type": "variable"
+  }
+}
