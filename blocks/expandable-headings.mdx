@@ -1,48 +1,31 @@
 ---
-title: Expandable Sections
+title: Expandable Headings
 icon: chevrons-down
 ---
 
-Expandable headings let users collapse and expand content sections — ideal for FAQs, long reference docs, or optional details.
+Expandable headings let users collapse and expand content sections — ideal for FAQs, long reference docs, or optional details. Three levels are supported.
 
 <ExpandableHeading>
 
-## What is Archbee CLI?
+# Expandable Heading 1
 
-Archbee CLI is a command-line tool for previewing, validating, and managing your documentation locally. It renders your Markdown/MDX files with the same templates used on the Archbee platform.
+This is the largest expandable heading. Click to collapse or expand.
 
 </ExpandableHeading>
 
 <ExpandableHeading>
 
-## How do I install it?
+## Expandable Heading 2
 
-```bash
-npm install -g @archbee/cli
-```
-
-Requires Node.js 18 or higher. LTS versions recommended.
+A medium expandable heading. Use it for subsections that users can toggle.
 
 </ExpandableHeading>
 
 <ExpandableHeading>
 
-## Can I use it with Docusaurus?
+### Expandable Heading 3
 
-Yes — run `archbee dev` in any Docusaurus project. The CLI auto-detects `docusaurus.config.js` or `.ts` and renders it with Archbee templates. Blog, multi-instance docs, and custom CSS are all supported.
-
-</ExpandableHeading>
-
-<ExpandableHeading>
-
-## What templates are available?
-
-Four built-in templates:
-
-- **Stripe** — Clean, modern layout (default)
-- **ColorNav** — Colored navigation sidebar
-- **Windy** — Minimal, spacious design
-- **Booklet** — All docs on one page
+The smallest expandable heading. Good for optional details or FAQ items.
 
 </ExpandableHeading>
 
@@ -54,8 +37,17 @@ MDX
 
 ```html
 <ExpandableHeading>
-## Your Heading
+# Expandable Heading 1
+Content that will be collapsible.
+</ExpandableHeading>
 
+<ExpandableHeading>
+## Expandable Heading 2
+Content that will be collapsible.
+</ExpandableHeading>
+
+<ExpandableHeading>
+### Expandable Heading 3
 Content that will be collapsible.
 </ExpandableHeading>
 ```
@@ -64,8 +56,17 @@ Markdown
 
 ```markdown
 :::::ExpandableHeading
-## Your Heading
+# Expandable Heading 1
+Content that will be collapsible.
+:::::
 
+:::::ExpandableHeading
+## Expandable Heading 2
+Content that will be collapsible.
+:::::
+
+:::::ExpandableHeading
+### Expandable Heading 3
 Content that will be collapsible.
 :::::
 ```

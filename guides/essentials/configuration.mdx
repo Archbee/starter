@@ -63,12 +63,12 @@ The main space lives at root level with `docsPath` + `structure.docsTree`. Addit
 "docsPath": "guides",
 "structure": {
   "docsTree": [
-    { "path": "index", "name": "Introduction", "icon": "house" },
+    { "path": "index.mdx" },
     {
       "isCategory": true,
       "categoryName": "Getting Started",
       "children": [
-        { "path": "quickstart", "name": "Quickstart" }
+        { "path": "quickstart.mdx" }
       ]
     }
   ]
@@ -80,14 +80,14 @@ The main space lives at root level with `docsPath` + `structure.docsTree`. Addit
     "icon": "newspaper",
     "structure": {
       "docsTree": [
-        { "path": "march-2026", "name": "March 2026" }
+        { "path": "march-2026.mdx" }
       ]
     }
   }
 ]
 ```
 
-See [Navigation](/essentials/navigation) for details on doc tree items.
+Doc titles and per-doc icons come from each file's frontmatter. See [Navigation](/essentials/navigation) for details on doc tree items.
 
 ## External links
 
@@ -139,8 +139,8 @@ Include the appropriate wrapper tags:
   "docsPath": "guides",
   "structure": {
     "docsTree": [
-      { "path": "index", "name": "Home", "icon": "house" },
-      { "path": "quickstart", "name": "Quickstart", "icon": "rocket" }
+      { "path": "index.mdx" },
+      { "path": "quickstart.mdx" }
     ]
   }
 }
