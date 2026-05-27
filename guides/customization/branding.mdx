@@ -9,12 +9,12 @@ icon: sparkles
 Set light and dark logos plus a favicon:
 
 ```json
-"faviconURL": "/public/favicon.ico",
-"publicLogoURL": "/public/logo-light.png",
-"darkPublicLogoURL": "/public/logo-dark.png"
+"faviconURL": "/assets/favicon.ico",
+"publicLogoURL": "/assets/logo-light.png",
+"darkPublicLogoURL": "/assets/logo-dark.png"
 ```
 
-Place the files in your `public/` directory. SVG or PNG with transparency work best.
+Place the files in an `assets/` directory inside your docs folder (`docsPath`). Paths are resolved relative to `docsPath`, so they render both locally and on the published site. SVG or PNG with transparency work best.
 
 ## Header Links
 
