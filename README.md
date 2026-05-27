@@ -97,7 +97,6 @@ All settings live in `archbee.json`. Key fields:
 The CLI auto-detects your project format — drop into any existing project and run `archbee dev`:
 
 - `archbee.json` — native Archbee config
-- `docs.json` / `mint.json` — Mintlify projects
 - `docusaurus.config.js` / `.ts` — Docusaurus projects
 
 ## Troubleshooting
