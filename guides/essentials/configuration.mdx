@@ -22,12 +22,12 @@ All configuration lives in `archbee.json` at the root of your project. Field nam
 ## Logos
 
 ```json
-"faviconURL": "/public/favicon.ico",
-"publicLogoURL": "/public/logo-light.png",
-"darkPublicLogoURL": "/public/logo-dark.png"
+"faviconURL": "/assets/favicon.ico",
+"publicLogoURL": "/assets/logo-light.png",
+"darkPublicLogoURL": "/assets/logo-dark.png"
 ```
 
-Place assets in the `public/` directory. Paths are relative to your project root.
+Place assets in an `assets/` directory inside your docs folder (`docsPath`). A leading `/` is resolved relative to `docsPath`, so the same paths render locally and on the published site.
 
 ## Colors
 
@@ -54,6 +54,7 @@ All flat at root level — same field names as the Archbee platform:
 | `isArchbeeBrandVisible` | `true` | Show "Powered by Archbee" in navigation |
 | `isPublicBackgroundEnabled` | `true` | Enable portal background pattern |
 | `showFullTitleInLeftNavDocsTree` | `false` | Show full doc titles in left nav instead of truncated |
+| `showEditInGitApp` | `true` | Show the "Edit on GitHub" button on docs (published site) |
 
 ## Navigation
 
@@ -88,6 +89,19 @@ The main space lives at root level with `docsPath` + `structure.docsTree`. Addit
 ```
 
 Doc titles and per-doc icons come from each file's frontmatter. See [Navigation](/essentials/navigation) for details on doc tree items.
+
+Set `isFoldedByDefault` on any node that has `children` — a category **or** a parent doc — to control whether it starts collapsed in the left navigation:
+
+```json
+{
+  "isCategory": true,
+  "categoryName": "Getting Started",
+  "isFoldedByDefault": true,
+  "children": [{ "path": "quickstart.mdx" }]
+}
+```
+
+When omitted, top-level nodes start expanded and deeper nested nodes start collapsed.
 
 ## External links
 
@@ -129,9 +143,9 @@ Include the appropriate wrapper tags:
   "contentLayout": "two-column",
   "publicTheme": "light",
 
-  "faviconURL": "/public/favicon.ico",
-  "publicLogoURL": "/public/logo-light.png",
-  "darkPublicLogoURL": "/public/logo-dark.png",
+  "faviconURL": "/assets/favicon.ico",
+  "publicLogoURL": "/assets/logo-light.png",
+  "darkPublicLogoURL": "/assets/logo-dark.png",
 
   "hostingColor": "#2166AE",
   "darkHostingColor": "#2166AE",

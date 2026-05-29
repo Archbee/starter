@@ -5,9 +5,9 @@
   "contentLayout": "two-column",
   "publicTheme": "light",
 
-  "faviconURL": "/public/favicon.ico",
-  "publicLogoURL": "/public/logo-light.png",
-  "darkPublicLogoURL": "/public/logo-dark.png",
+  "faviconURL": "/assets/favicon.ico",
+  "publicLogoURL": "/assets/logo-light.png",
+  "darkPublicLogoURL": "/assets/logo-dark.png",
 
   "hostingColor": "#2166AE",
   "darkHostingColor": "#2166AE",

@@ -52,18 +52,18 @@ Four built-in templates: **Stripe**, **ColorNav**, **Windy**, **Booklet**. Set v
 ```
 my-docs/
 ├── archbee.json           ← Configuration (name, template, colors, navigation)
-├── guides/                ← Documentation space
+├── guides/                ← Documentation space (docsPath)
 │   ├── index.mdx          ← Home page
 │   ├── quickstart.mdx
+│   ├── assets/            ← Static assets (logos, favicon, images)
 │   ├── essentials/        ← Configuration, navigation, markdown, code, images
 │   ├── customization/     ← Templates, theming, branding
 │   └── api/               ← API command reference
-├── blocks/                ← Blocks showcase space
-│   ├── headings.mdx
-│   ├── callouts.mdx
-│   ├── code-drawers.mdx
-│   └── ... (21 block pages)
-└── public/                ← Static assets (logos, favicon)
+└── blocks/                ← Blocks showcase space
+    ├── headings.mdx
+    ├── callouts.mdx
+    ├── code-drawers.mdx
+    └── ... (21 block pages)
 ```
 
 ## Development

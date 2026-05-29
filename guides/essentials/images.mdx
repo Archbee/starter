@@ -4,35 +4,44 @@ description: Adding images, logos, and static files
 icon: image
 ---
 
-Static files like images, logos, and favicons go in the `public/` directory at your project root.
+Static files like images, logos, and favicons live **inside your docs folder**
+(your `docsPath`, e.g. `guides/`). A leading `/` in an image path is resolved
+relative to `docsPath` — not the repository root — so the same paths work both
+in local preview and on the published Archbee site.
 
 ## Adding Images
 
-Place an image in `public/`:
+Place an image under your docs folder, e.g. in an `assets/` directory:
 
 ```
 my-docs/
-  public/
-    screenshot.png
-  guides/
+  guides/            ← docsPath
+    assets/
+      screenshot.png
     index.mdx
 ```
 
-Reference it in your MDX:
+Reference it in your MDX with a path relative to `docsPath`:
 
 ```markdown
-![Screenshot](/public/screenshot.png)
+![Screenshot](/assets/screenshot.png)
+```
+
+You can also use a path relative to the current doc:
+
+```markdown
+![Screenshot](assets/screenshot.png)
 ```
 
 ## Logos
 
-Configure light and dark logos in `archbee.json`:
+Configure light and dark logos in `archbee.json` (paths relative to `docsPath`):
 
 ```json
 "logos": {
-  "light": "/public/logo-light.png",
-  "dark": "/public/logo-dark.png",
-  "favicon": "/public/favicon.ico"
+  "light": "/assets/logo-light.png",
+  "dark": "/assets/logo-dark.png",
+  "favicon": "/assets/favicon.ico"
 }
 ```
 
@@ -52,24 +61,25 @@ The light logo appears in light mode, the dark logo in dark mode. If only one is
 
 ## File Organization
 
-Keep your `public/` directory organized:
+Keep your assets organized under `docsPath`:
 
 ```
-public/
-  logo-light.png
-  logo-dark.png
-  favicon.ico
-  images/
-    hero.png
-    diagram.svg
-  downloads/
-    guide.pdf
+guides/            ← docsPath
+  assets/
+    logo-light.png
+    logo-dark.png
+    favicon.ico
+    images/
+      hero.png
+      diagram.svg
+    downloads/
+      guide.pdf
 ```
 
-Reference nested files with the full path:
+Reference nested files with the full path (relative to `docsPath`):
 
 ```markdown
-![Hero](/public/images/hero.png)
+![Hero](/assets/images/hero.png)
 ```
 
 ## External Images
