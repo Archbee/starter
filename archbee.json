@@ -45,6 +45,7 @@
           { "path": "essentials/configuration.mdx" },
           { "path": "essentials/navigation.mdx" },
           { "path": "essentials/markdown.mdx" },
+          { "path": "essentials/links.mdx" },
           { "path": "essentials/code.mdx" },
           { "path": "essentials/images.mdx" }
         ]
@@ -90,6 +91,7 @@
               { "path": "dividers.mdx" },
               { "path": "vertical-split.mdx" },
               { "path": "blockquotes.mdx" },
+              { "path": "links.mdx" },
               { "path": "link-grids.mdx" },
               { "path": "workflows.mdx" },
               { "path": "tabs.mdx" }

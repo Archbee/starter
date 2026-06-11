@@ -1,0 +1,90 @@
+---
+title: Links
+description: Linking between docs, anchors, and external URLs
+icon: link
+---
+
+Link to other docs using paths the same way you'd link between any two files
+on disk. Archbee resolves the path to the right doc when the site loads, so
+the link survives renames and works identically in local preview and on the
+published site.
+
+## Linking to Another Doc
+
+Use a relative path, just like linking between files on disk:
+
+```markdown
+[Quickstart](./quickstart)
+[Markdown](./markdown.md)
+[API spaces](../api/spaces.md)
+```
+
+Or use a path from your space's root (starts with `/`):
+
+```markdown
+[Quickstart](/quickstart)
+[Code blocks](/essentials/code)
+```
+
+The `.md` / `.mdx` extension is optional — `./markdown` and `./markdown.md` both work.
+
+## Linking to a Heading
+
+Add `#heading-slug` to jump to a specific section:
+
+```markdown
+[Tabbed code blocks](./code.md#tabs)
+[Top of this page](#linking-to-another-doc)
+```
+
+## External Links
+
+External URLs, email, and phone links work as you'd expect:
+
+```markdown
+[Archbee](https://archbee.com)
+[Email us](mailto:support@archbee.com)
+[Call support](tel:+1-555-0100)
+```
+
+These open in the browser (or your mail/phone app) — Archbee doesn't rewrite them.
+
+## Cross-Space Links
+
+If your project has multiple spaces (configured in `sites[]` in `archbee.json`), you can link between them with the same relative-path syntax — no special IDs needed:
+
+```markdown
+[Headings (in Blocks)](../blocks/headings)
+[Callouts (in Blocks)](../blocks/callouts.mdx)
+```
+
+The `../` walks out of the current space's `docsPath` and into a sibling space's folder. Resolution is repo-wide: any doc in any space is reachable from anywhere.
+
+## The Leading `/` Rule
+
+A leading slash means "from this space's `docsPath` root" — **not** the repo root. So with `docsPath: "guides"`:
+
+- `/quickstart` → `guides/quickstart` ✓
+- `/essentials/code` → `guides/essentials/code` ✓
+
+From a top-level doc this is convenient. From a nested doc (e.g. `essentials/code.mdx`), the leading `/` actually resolves against **the current doc's folder**, not docsPath — so `/quickstart` written inside `essentials/code.mdx` would look for `essentials/quickstart`, which usually isn't what you want. The same behavior applies on the published site, so it's worth getting right. From any nested doc, prefer `./` or `../` so the resolution is unambiguous.
+
+## Validating Before Publishing
+
+Run `archbee broken-links` to scan every internal link in your docs:
+
+```bash
+archbee broken-links
+```
+
+Any link that doesn't resolve to a real doc is reported with the source file and line number — the same check the platform runs at import time. Use it in CI to catch broken links before they ship.
+
+## What Happens When a Link Resolves
+
+Resolved links become **doc mentions** (internal references), not plain HTML anchors. That means:
+
+- They survive when you rename or move the target doc — the link still points at the same content.
+- Clicking navigates within the app (no full page reload).
+- The link text auto-updates if you change the target doc's title elsewhere.
+
+If a link can't be resolved (typo, missing doc), it stays as a plain anchor and `archbee dev` logs a one-time warning in the terminal so you spot it during development.

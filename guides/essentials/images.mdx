@@ -4,45 +4,95 @@ description: Adding images, logos, and static files
 icon: image
 ---
 
-Static files like images, logos, and favicons live **inside your docs folder**
-(your `docsPath`, e.g. `guides/`). A leading `/` in an image path is resolved
-relative to `docsPath` — not the repository root — so the same paths work both
-in local preview and on the published Archbee site.
+Static files — images, logos, favicons, downloads — live **inside your docs
+folder** (your `docsPath`, e.g. `guides/`). Reference them using paths the
+same way you'd link between docs; the same paths render in local preview and
+on the published Archbee site.
 
-## Adding Images
+## Adding an Image
 
-Place an image under your docs folder, e.g. in an `assets/` directory:
+Use a relative path to a file in your docs folder:
+
+```markdown
+![Hero](./hero.png)
+![Diagram](../assets/diagrams/flow.svg)
+```
+
+Or use a path from your space's root (starts with `/`):
+
+```markdown
+![Hero](/assets/hero.png)
+```
+
+External URLs work too — they're loaded by the browser at view time:
+
+```markdown
+![Alt text](https://example.com/image.png)
+```
+
+## Where to Put Your Assets
+
+Place files under your docs folder, e.g. in an `assets/` directory:
 
 ```
 my-docs/
   guides/            ← docsPath
     assets/
-      screenshot.png
-    index.mdx
+      hero.png
+      diagrams/
+        flow.svg
+    essentials/
+      images.mdx
 ```
 
-Reference it in your MDX with a path relative to `docsPath`:
+Reference them from anywhere in the same space:
 
 ```markdown
-![Screenshot](/assets/screenshot.png)
+![Hero](/assets/hero.png)
+![Diagram](/assets/diagrams/flow.svg)
 ```
 
-You can also use a path relative to the current doc:
+Or relative to the current doc:
 
 ```markdown
-![Screenshot](assets/screenshot.png)
+![Hero](../assets/hero.png)
 ```
 
-## Logos
+## Cross-Space Assets
+
+If your project has multiple spaces (`sites[]` in `archbee.json`) and you
+share assets between them, reference them with a relative path that walks
+across the space boundary:
+
+```markdown
+![Shared logo](../blocks/assets/logo.png)
+```
+
+The `../` walks out of the current space's `docsPath` and into the sibling
+space's folder. Resolution works the same way on both the local preview and
+on the published site — as long as the file actually exists at that path.
+
+## The Leading `/` Rule
+
+A leading slash means "from this space's `docsPath` root" — **not** the repo
+root. So with `docsPath: "guides"`:
+
+- `/assets/hero.png` → `guides/assets/hero.png` ✓
+- `/hero.png` → `guides/hero.png` ✓
+
+From a top-level doc this is convenient. From a nested doc, the leading `/`
+actually resolves against the current doc's folder, not docsPath — same
+behavior on both the local preview and the published site. From any nested
+doc, prefer `./` or `../` so the resolution is unambiguous.
+
+## Logos and Favicon
 
 Configure light and dark logos in `archbee.json` (paths relative to `docsPath`):
 
 ```json
-"logos": {
-  "light": "/assets/logo-light.png",
-  "dark": "/assets/logo-dark.png",
-  "favicon": "/assets/favicon.ico"
-}
+"faviconURL": "/assets/favicon.ico",
+"publicLogoURL": "/assets/logo-light.png",
+"darkPublicLogoURL": "/assets/logo-dark.png"
 ```
 
 The light logo appears in light mode, the dark logo in dark mode. If only one is provided, it's used for both.
@@ -59,35 +109,3 @@ The light logo appears in light mode, the dark logo in dark mode. If only one is
 | Logo | 200px wide, any height |
 | Favicon | 32x32 or 192x192 |
 
-## File Organization
-
-Keep your assets organized under `docsPath`:
-
-```
-guides/            ← docsPath
-  assets/
-    logo-light.png
-    logo-dark.png
-    favicon.ico
-    images/
-      hero.png
-      diagram.svg
-    downloads/
-      guide.pdf
-```
-
-Reference nested files with the full path (relative to `docsPath`):
-
-```markdown
-![Hero](/assets/images/hero.png)
-```
-
-## External Images
-
-You can also use external image URLs:
-
-```markdown
-![Alt text](https://example.com/image.png)
-```
-
-External images are not served by the dev server — they require an internet connection.
