@@ -3,12 +3,26 @@ title: Image
 icon: image
 ---
 
-Add images to your documentation using standard Markdown syntax.
+Embed images in your docs using standard Markdown or the MDX `<Image>` component for more control over sizing and alignment.
 
 ![Archbee Documentation](https://images.archbee.com/bNBm7nPJgXjbjLyfbHNh2/n2qr6fR-UoEp3M5SsakwT-20260330-143019.png?format=webp)
 
 ## Syntax
 
+<CodeblockTabs>
+
+MDX
+
+```html
+<Image src="https://example.com/image.png" alt="Alt text" />
+```
+
+Markdown
+
 ```markdown
 ![Alt text](https://example.com/image.png)
 ```
+
+</CodeblockTabs>
+
+For details on **where to store assets**, path resolution (`./`, `/`, `../`), and cross-space references, see [Images & Assets](/essentials/images).
