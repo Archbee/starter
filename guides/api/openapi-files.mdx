@@ -1,6 +1,6 @@
 ---
 title: OpenAPI & Files
-description: Sync API specs, upload files, export data
+description: Sync API specs, manage File Manager files, export data
 icon: upload
 ---
 
@@ -55,6 +55,70 @@ archbee upload --doc-space-id <ID> --api-key <KEY> --file ./secret.pdf --private
 | `--api-key` | Yes | API key |
 | `--file` | Yes | Path to file |
 | `--private` | No | Upload as private (default: public) |
+
+## list-files
+
+List files and folders in the File Manager. Results are paginated.
+
+```bash
+archbee list-files --doc-space-id <ID> --api-key <KEY>
+archbee list-files --doc-space-id <ID> --api-key <KEY> --parent-id <FOLDER_ID> --type image
+archbee list-files --doc-space-id <ID> --api-key <KEY> --search logo --page-size 50
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--parent-id` | No | Folder ID to list (omit for the root) |
+| `--type` | No | Filter by type: `directory`, `image`, or `file` |
+| `--search` | No | Filter by filename (case-insensitive) |
+| `--page-index` | No | Zero-based page index (default: 0) |
+| `--page-size` | No | Page size, 1-200 |
+
+## delete-file
+
+Permanently delete a File Manager file or folder by ID.
+
+```bash
+archbee delete-file --doc-space-id <ID> --api-key <KEY> --file-id <FILE_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--file-id` | Yes | File or folder ID to delete |
+
+## move-file
+
+Move a File Manager file or folder into another folder.
+
+```bash
+archbee move-file --doc-space-id <ID> --api-key <KEY> --file-id <FILE_ID> --parent-id <FOLDER_ID>
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--file-id` | Yes | File or folder ID to move |
+| `--parent-id` | No | Destination folder ID (omit to move to the root) |
+
+## replace-file
+
+Overwrite an existing File Manager file with new contents. The file keeps its ID and public URL, so existing document embeds update automatically.
+
+```bash
+archbee replace-file --doc-space-id <ID> --api-key <KEY> --file-id <FILE_ID> --file ./logo-v2.png
+```
+
+| Flag | Required | Description |
+|------|----------|-------------|
+| `--doc-space-id` | Yes | Space ID |
+| `--api-key` | Yes | API key |
+| `--file-id` | Yes | ID of the existing file to overwrite |
+| `--file` | Yes | Path to the new file contents |
 
 ## export
 
